@@ -1,0 +1,18 @@
+###TABELA
+    - criar tabs para dividir tabelas de abertos, andamento e fechados
+      Container(
+                width: 350,
+                child: const TabBar(tabs: [
+                  Tab(text: 'Abertos'),
+                  Tab(text: 'Andamento'),
+                  Tab(text: 'Fechados'),
+                ]),
+              ),
+    - Estudar o Theme para tratar melhor os decorations
+    - Tabela de simucs: colocar dados persistentes em um header no topo da tabela
+    - Refatorando código padrão manguinho 
+    - Galeria de fotos em cada peça
+###IDE
+    
+###MENU
+    - Leitor de barcode através da câmera do pc

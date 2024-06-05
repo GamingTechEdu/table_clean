@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../../../foundations/foundations.dart';
+import '../../presentation/presenters/presenters.dart';
+
+class SearchBarWidget extends StatelessWidget {
+  const SearchBarWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final GetxTablePresenter controller = Get.put(GetxTablePresenter());
+    return Container(
+      height: 40,
+      width: 300,
+      decoration: Decorations.searchBarDecoration,
+      child: TextField(
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.only(top: 1, bottom: 1, left: 10, right: 10),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.orange, width: 1.5),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.black26, width: 1.5),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            hintText: 'Pesquisar' +
+                controller.searchKey!
+                    .replaceAll(new RegExp('[\\W_]+'), ' ')
+                    .toUpperCase(),
+            prefixIcon: IconButton(
+                icon: Icon(Icons.cancel),
+                onPressed: () {
+                  controller.isSearch = false;
+                  controller.initializeData();
+                }),
+            suffixIcon: IconButton(icon: Icon(Icons.search), onPressed: () {})),
+        onSubmitted: (value) {
+          controller.filterData(value);
+        },
+      ),
+    );
+  }
+}
+
+// Container(
+        //   height: 40,
+        //   width: 300,
+        //   decoration: BoxDecoration( color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(10))),
+        //   child: TextField(
+        //     decoration: InputDecoration(
+        //         contentPadding: const EdgeInsets.only(top: 1, bottom: 1, left: 10, right: 10),
+        //         border:OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+        //         focusedBorder: OutlineInputBorder(
+        //           borderSide: const BorderSide(color: Colors.orange, width: 1.5),
+        //           borderRadius: BorderRadius.circular(10),
+        //         ),
+        //         enabledBorder: OutlineInputBorder(
+        //           borderSide: const BorderSide(color: Colors.black26, width: 1.5),
+        //           borderRadius: BorderRadius.circular(10),
+        //         ),
+        //         hintText: 'Pesquisar' +
+        //             _searchKey!
+        //                 .replaceAll(new RegExp('[\\W_]+'), ' ')
+        //                 .toUpperCase(),
+        //         prefixIcon: IconButton(
+        //             icon: Icon(Icons.cancel),
+        //             onPressed: () {
+        //               setState(() {
+        //                 // _isSearch = false;
+        //               });
+        //               // _initializeData();
+        //             }),
+        //         suffixIcon:
+        //             IconButton(icon: Icon(Icons.search), onPressed: () {})),
+        //     onSubmitted: (value) {
+        //       // _filterData(value);
+        //     },
+        //   ),
+        // ),
+        // IconButton(
+        //     icon: Icon(Icons.search),
+        //     onPressed: () {
+        //       setState(() {
+        //         _isSearch = true;
+        //       });
+        //     })
