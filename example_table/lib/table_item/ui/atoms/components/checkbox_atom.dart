@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../presentation/presenters/presenters.dart';
 
 class CheckboxAtom extends StatelessWidget {
   final Function(bool?)? onChanged;
@@ -10,7 +7,6 @@ class CheckboxAtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GetxTablePresenter controller = Get.put(GetxTablePresenter());
     return Checkbox(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(5))),

@@ -1,0 +1,662 @@
+[
+    {
+        "code": "A1",
+        "description": "Antena 915MHz",
+        "value": 10
+    },
+    {
+        "code": "C24",
+        "description": "C24: capacitor 150nF 600V",
+        "value": 10
+    },
+    {
+        "code": "C25",
+        "description": "C25: capacitor eletrolítico 10uF / 150V",
+        "value": 10
+    },
+    {
+        "code": "C26",
+        "description": "C26: capacitor cerâmico 47uF / 35V",
+        "value": 10
+    },
+    {
+        "code": "C29",
+        "description": "C29: capacitor cerâmico 22uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C2",
+        "description": "C2: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C3",
+        "description": "C3: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C8",
+        "description": "C8: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C9",
+        "description": "C9: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C11",
+        "description": "C11: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C13",
+        "description": "C13: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C23",
+        "description": "C23: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C28",
+        "description": "C28: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C30",
+        "description": "C30: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C35",
+        "description": "C35: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C38",
+        "description": "C38: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C39",
+        "description": "C39: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C42",
+        "description": "C42: capacitor cerâmico 100nF /10V",
+        "value": 10
+    },
+    {
+        "code": "C1",
+        "description": "C1: capacitor cerâmico 1uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C4",
+        "description": "C4: capacitor cerâmico 1uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C6",
+        "description": "C6: capacitor cerâmico 1uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C10",
+        "description": "C10: capacitor cerâmico 1uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C21",
+        "description": "C21: capacitor cerâmico 1uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C22",
+        "description": "C22: capacitor cerâmico 1uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C33",
+        "description": "C33: capacitor cerâmico 1uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C52",
+        "description": "C52: capacitor cerâmico 1uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C17",
+        "description": "C17: capacitor cerâmico 100nF /35V",
+        "value": 10
+    },
+    {
+        "code": "C27",
+        "description": "C27: capacitor cerâmico 100nF /35V",
+        "value": 10
+    },
+    {
+        "code": "C31",
+        "description": "C31: capacitor eletrolítico 100uF / 35V",
+        "value": 10
+    },
+    {
+        "code": "C32",
+        "description": "C32: capacitor cerâmico 2,2uF /35V",
+        "value": 10
+    },
+    {
+        "code": "C14",
+        "description": "C14: capacitor cerâmico 33nF /25V",
+        "value": 10
+    },
+    {
+        "code": "C15",
+        "description": "C15: capacitor cerâmico 33nF /25V",
+        "value": 10
+    },
+    {
+        "code": "C18",
+        "description": "C18: capacitor cerâmico 33nF /25V",
+        "value": 10
+    },
+    {
+        "code": "C19",
+        "description": "C19: capacitor cerâmico 33nF /25V",
+        "value": 10
+    },
+    {
+        "code": "C5",
+        "description": "C5: capacitor cerâmico 10uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C7",
+        "description": "C7: capacitor cerâmico 10uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C12",
+        "description": "C12: capacitor cerâmico 10uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C34",
+        "description": "C34: capacitor cerâmico 10uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C36",
+        "description": "C36: capacitor cerâmico 10uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C37",
+        "description": "C37: capacitor cerâmico 10uF /10V",
+        "value": 10
+    },
+    {
+        "code": "C20",
+        "description": "C20: capacitor cerâmico 10uF /35V",
+        "value": 10
+    },
+    {
+        "code": "C43",
+        "description": "C43: capacitor cerâmico 10nF /25V",
+        "value": 10
+    },
+    {
+        "code": "C45",
+        "description": "C45: capacitor cerâmico 33pF /25V",
+        "value": 10
+    },
+    {
+        "code": "C46",
+        "description": "C46: capacitor cerâmico 4,7pF /25V",
+        "value": 10
+    },
+    {
+        "code": "C47",
+        "description": "C47: capacitor cerâmico 4,7pF /25V",
+        "value": 10
+    },
+    {
+        "code": "C48",
+        "description": "C48: capacitor cerâmico 1,8pF /25V",
+        "value": 10
+    },
+    {
+        "code": "C49",
+        "description": "C49: capacitor cerâmico 1,5pF /25V",
+        "value": 10
+    },
+    {
+        "code": "C40",
+        "description": "C40: capacitor cerâmico 47pF /25V",
+        "value": 10
+    },
+    {
+        "code": "C41",
+        "description": "C41: capacitor cerâmico 47pF /25V",
+        "value": 10
+    },
+    {
+        "code": "C44",
+        "description": "C44: capacitor cerâmico 47pF /25V",
+        "value": 10
+    },
+    {
+        "code": "C50",
+        "description": "C50: capacitor cerâmico 18pF /25V",
+        "value": 10
+    },
+    {
+        "code": "C51",
+        "description": "C51: capacitor cerâmico 18pF /25V",
+        "value": 20
+    },
+    {
+        "code": "D2",
+        "description": "D2: diodo SBA140AS",
+        "value": 20
+    },
+    {
+        "code": "D3",
+        "description": "D3: diodo RS1M",
+        "value": 20
+    },
+    {
+        "code": "D4",
+        "description": "D4: diodo RS1M",
+        "value": 20
+    },
+    {
+        "code": "D5",
+        "description": "D5: diodo US1M",
+        "value": 20
+    },
+    {
+        "code": "D6",
+        "description": "D6: diodo zener 30V",
+        "value": 20
+    },
+    {
+        "code": "K1",
+        "description": "K1: rele 24VDC",
+        "value": 20
+    },
+    {
+        "code": "FB1",
+        "description": "FB1: ferrite bead 600R / 200mA",
+        "value": 20
+    },
+    {
+        "code": "FB3",
+        "description": "FB3: ferrite bead 600R / 200mA",
+        "value": 20
+    },
+    {
+        "code": "L1",
+        "description": "L1: indutor 10uH",
+        "value": 20
+    },
+    {
+        "code": "L2",
+        "description": "L2: indutor 33nH",
+        "value": 20
+    },
+    {
+        "code": "L3",
+        "description": "L3: indutor 10nH",
+        "value": 20
+    },
+    {
+        "code": "L4",
+        "description": "L4: indutor 8,2nH",
+        "value": 20
+    },
+    {
+        "code": "L5",
+        "description": "L5: indutor 7,5nH",
+        "value": 20
+    },
+    {
+        "code": "L6",
+        "description": "L6: indutor 5,6nH",
+        "value": 20
+    },
+    {
+        "code": "L7",
+        "description": "L7: indutor 1mH",
+        "value": 20
+    },
+    {
+        "code": "L8",
+        "description": "L8: indutor 3,3mH",
+        "value": 20
+    },
+    {
+        "code": "LED2",
+        "description": "LED2: led vermelho",
+        "value": 20
+    },
+    {
+        "code": "Q2",
+        "description": "Q2: transistor BSS138",
+        "value": 20
+    },
+    {
+        "code": "Q3",
+        "description": "Q3: photo transistor PT19-315C",
+        "value": 20
+    },
+    {
+        "code": "R10",
+        "description": "R10: resistor shunt 0,025R 3W",
+        "value": 20
+    },
+    {
+        "code": "R26",
+        "description": "R26: resistor 220R",
+        "value": 20
+    },
+    {
+        "code": "R28",
+        "description": "R28: resistor 220R",
+        "value": 20
+    },
+    {
+        "code": "R13",
+        "description": "R13: resistor 27K",
+        "value": 20
+    },
+    {
+        "code": "R12",
+        "description": "R12: resistor 27K",
+        "value": 20
+    },
+    {
+        "code": "R14",
+        "description": "R14: resistor 12K",
+        "value": 20
+    },
+    {
+        "code": "R16",
+        "description": "R16: resistor 12K",
+        "value": 20
+    },
+    {
+        "code": "R18",
+        "description": "R18: resistor 12K",
+        "value": 20
+    },
+    {
+        "code": "R27",
+        "description": "R27: resistor 12K",
+        "value": 20
+    },
+    {
+        "code": "R2",
+        "description": "R2: resistor 1K",
+        "value": 20
+    },
+    {
+        "code": "R5",
+        "description": "R5: resistor 1K",
+        "value": 20
+    },
+    {
+        "code": "R8",
+        "description": "R8: resistor 1K",
+        "value": 20
+    },
+    {
+        "code": "R11",
+        "description": "R11: resistor 1K",
+        "value": 50
+    },
+    {
+        "code": "R15",
+        "description": "R15: resistor 1K",
+        "value": 50
+    },
+    {
+        "code": "R17",
+        "description": "R17: resistor 1K",
+        "value": 50
+    },
+    {
+        "code": "R29",
+        "description": "R29: resistor 5,6K",
+        "value": 50
+    },
+    {
+        "code": "R19",
+        "description": "R19: resistor 37,4K",
+        "value": 50
+    },
+    {
+        "code": "R9",
+        "description": "R9: resistor 2,49K",
+        "value": 50
+    },
+    {
+        "code": "R3",
+        "description": "R3: resistor 499K",
+        "value": 50
+    },
+    {
+        "code": "R4",
+        "description": "R4: resistor 499K",
+        "value": 50
+    },
+    {
+        "code": "R1",
+        "description": "R1: resistor 10R",
+        "value": 50
+    },
+    {
+        "code": "R6",
+        "description": "R6: fusistor 2,2R",
+        "value": 50
+    },
+    {
+        "code": "R22",
+        "description": "R22: fusistor 8,2K",
+        "value": 50
+    },
+    {
+        "code": "U3",
+        "description": "U3: CI GD32D230xG",
+        "value": 50
+    },
+    {
+        "code": "U4",
+        "description": "U4: CI LNK3202D",
+        "value": 50
+    },
+    {
+        "code": "U1",
+        "description": "U1: CI ADE7566",
+        "value": 50
+    },
+    {
+        "code": "U2",
+        "description": "U2: CI MAX17630",
+        "value": 50
+    },
+    {
+        "code": "U7",
+        "description": "U7: CI SX1232",
+        "value": 50
+    },
+    {
+        "code": "U5",
+        "description": "U5: foto acoplador VOS615A",
+        "value": 50
+    },
+    {
+        "code": "U6",
+        "description": "U6: foto acoplador VOS615A",
+        "value": 50
+    },
+    {
+        "code": "VR1",
+        "description": "VR1: varistor XKTD471K",
+        "value": 50
+    },
+    {
+        "code": "X1",
+        "description": "X1: cristal 32.768kHz",
+        "value": 50
+    },
+    {
+        "code": "X2",
+        "description": "X2: cristal 32MHz",
+        "value": 50
+    },
+    {
+        "code": "PCI",
+        "description": "PCI: pcb ver 4.0D",
+        "value": 50
+    },
+    {
+        "code": "BaseG",
+        "description": "Base G",
+        "value": 50
+    },
+    {
+        "code": "BaseP",
+        "description": "Base P",
+        "value": 50
+    },
+    {
+        "code": "CopoG",
+        "description": "Copo G C/G",
+        "value": 20
+    },
+    {
+        "code": "CopoG",
+        "description": "Copo G S/G",
+        "value": 20
+    },
+    {
+        "code": "CopoP",
+        "description": "Copo P C/G",
+        "value": 50
+    },
+    {
+        "code": "CopoP",
+        "description": "Copo P S/G",
+        "value": 50
+    },
+    {
+        "code": "GaxetaG",
+        "description": "Gaxeta G",
+        "value": 10
+    },
+    {
+        "code": "GaxetaP",
+        "description": "Gaxeta P",
+        "value": 50
+    },
+    {
+        "code": "Parafusos",
+        "description": "Parafusos x3",
+        "value": 1
+    },
+    {
+        "code": "Verniz",
+        "description": "Verniz",
+        "value": 1
+    },
+    {
+        "code": "EtiPlacaG",
+        "description": "Etiqueta Série (PLACA) Grande",
+        "value": 2
+    },
+    {
+        "code": "EtiPlacaP",
+        "description": "Etiqueta Série (PLACA) Pequeno",
+        "value": 2
+    },
+    {
+        "code": "EtiCopoG",
+        "description": "Etiqueta Série (COPO) Grande",
+        "value": 100
+    },
+    {
+        "code": "EtiCopoP",
+        "description": "Etiqueta Série (COPO) Pequeno",
+        "value": 100
+    },
+    {
+        "code": "EtiCaixaG",
+        "description": "Etiqueta Série (Caixa) Grande",
+        "value": 100
+    },
+    {
+        "code": "EtiCaixaP",
+        "description": "Etiqueta Série (Caixa) Pequeno",
+        "value": 100
+    },
+    {
+        "code": "ColaContato",
+        "description": "Cola de Contato",
+        "value": 1
+    },
+    {
+        "code": "CaixaInd",
+        "description": "Caixa Individual",
+        "value": 2
+    },
+    {
+        "code": "CaixaCole",
+        "description": "Caixa Coletiva",
+        "value": 10
+    },
+    {
+        "code": "C.DimmerCinza",
+        "description": "Cabo Dimmer 1 Cinza",
+        "value": 1
+    },
+    {
+        "code": "C.DimmerRoxo",
+        "description": "Cabo Dimmer 2 Roxo",
+        "value": 1
+    },
+    {
+        "code": "Tempo",
+        "description": "Tempo de Trabalho",
+        "value": 1
+    },
+    {
+        "code": "SemRecu.",
+        "description": "Sem Recuperação",
+        "value": 400
+    },
+    {
+        "code": "TrilhaDanificada",
+        "description": "Trilha Danificada",
+        "value": 0
+    },
+    {
+        "code": "Solda Fria",
+        "description": "Solda Fria",
+        "value": 0
+    },
+    {
+        "code": "Oxidação/limpeza",
+        "description": "Oxidação/limpeza",
+        "value": 3
+    },
+    {
+        "code": "GVPCE",
+        "description": "Gax/Ver/Para/Cola/Emba. ind.",
+        "value": 3
+    }
+]

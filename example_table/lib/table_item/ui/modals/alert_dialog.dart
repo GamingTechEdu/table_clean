@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_table/export.dart';
+import '../widgets/widgets.dart';
 
 class AlertDialogCompo extends StatelessWidget {
   const AlertDialogCompo({Key? key}) : super(key: key);
@@ -13,48 +15,18 @@ class AlertDialogCompo extends StatelessWidget {
             backgroundColor: Colors.transparent,
             body: Center(
               child: AlertDialog(
-                contentPadding: EdgeInsets.zero,
                 insetPadding: EdgeInsets.all(20),
                 content: Container(
                   width: 1000,
                   height: 500,
                   child: Stack(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                        ),
-                        height: MediaQuery.of(context).size.height,
-                        child: Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10), 
-                                ),
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.grey,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
                       Positioned(
-                        top: 8,
-                        right: 8,
+                        top: 2,
+                        right: 5,
                         child: IconButton(
                           icon: Icon(Icons.close),
-                          color: Colors.black,
+                          color: Colors.red,
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
