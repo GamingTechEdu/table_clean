@@ -40,7 +40,7 @@ class GetxTablePresenter extends GetxController {
         "in_stock": "${i}0",
         "alert": "5",
         "received": [i + 20, 150],
-        // "comand": 
+        // "comand":
       });
       i++;
     }
@@ -150,27 +150,26 @@ class GetxTablePresenter extends GetxController {
   }
 
   void backPage(presenter) {
-    print(currentPage);
-    currentPage == 1
-        ? null
-        : () {
-            var _nextSet = currentPage - currentPerPage!;
-            currentPage = _nextSet > 1 ? _nextSet : 1;
-            presenter.resetData(start: currentPage - 1);
-            update();
-          };
+    if (currentPage == 1) {
+      return;
+    } else {
+      var _nextSet = currentPage - currentPerPage!;
+      currentPage = _nextSet > 1 ? _nextSet : 1;
+      resetData(start: currentPage - 1);
+      update();
+    }
     update();
   }
 
   void nextPage(presenter) {
-    currentPage + currentPerPage! - 1 > total
-        ? null
-        : () {
-            var _nextSet = currentPage + currentPerPage!;
-            currentPage = _nextSet < total ? _nextSet : total - currentPerPage!;
-            presenter.resetData(start: _nextSet - 1);
-            update();
-          };
+    if (currentPage + currentPerPage! - 1 <= total) {
+      var _nextSet = currentPage + currentPerPage!;
+      currentPage = _nextSet < total ? _nextSet : total - currentPerPage!;
+      resetData(start: _nextSet - 1);
+      update();
+    } else {
+      return;
+    }
     update();
   }
 }

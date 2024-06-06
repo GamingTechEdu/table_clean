@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_table/export.dart';
-import '../widgets/widgets.dart';
 
-class AlertDialogCompo extends StatelessWidget {
-  const AlertDialogCompo({Key? key}) : super(key: key);
+
+class IncludeComponents extends StatelessWidget {
+  const IncludeComponents({Key? key}) : super(key: key);
 
   Future<void> showDialogCompo(context) async {
     return showDialog(
@@ -18,9 +17,10 @@ class AlertDialogCompo extends StatelessWidget {
                 insetPadding: EdgeInsets.all(20),
                 content: Container(
                   width: 1000,
-                  height: 500,
+                  height: 520,
                   child: Stack(
                     children: [
+                      // ResponsiveLayout(),
                       Positioned(
                         top: 2,
                         right: 5,

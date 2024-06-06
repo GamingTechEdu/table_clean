@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ExpandedRow extends StatelessWidget {
-  const ExpandedRow({Key? key}) : super(key: key);
+class ExpandedRowAtom extends StatelessWidget {
+  const ExpandedRowAtom({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

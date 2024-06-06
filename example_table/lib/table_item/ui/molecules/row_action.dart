@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:responsive_table_example/table_item/ui/components/components.dart';
 
 import '../../../utils/spacers.dart';
 import '../../presentation/presenters/presenters.dart';
@@ -23,7 +24,7 @@ class RowAction extends StatelessWidget {
         length: 3,
         child: Row(
           children: [
-            CheckboxAtom(
+            CheckboxWidget(
               value: controller.selecteds.length == controller.source.length &&
                   controller.source.isNotEmpty,
               onChanged: (value) => controller.onSelectAll(value),

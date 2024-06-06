@@ -18,19 +18,11 @@ class DashboardMoleucle extends StatelessWidget {
           DashboardAtom(
             label: "Total: ${controller.total.toString()}",
           ),
-          Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: Color(0xFFD9D9D9)),
-            width: 300,
-            height: 100,
+          DashboardAtom(
+            label: "Teste",
           ),
-          Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: Color(0xFFD9D9D9)),
-            width: 300,
-            height: 100,
+          DashboardAtom(
+            label: "Teste",
           ),
         ],
       ),

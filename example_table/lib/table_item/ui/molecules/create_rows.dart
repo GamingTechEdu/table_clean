@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pdf_creator_flutter/app.dart';
+import 'package:responsive_table_example/table_item/ui/components/components.dart';
 
 import '../../../foundations/foundations.dart';
 import '../../../utils/utils.dart';
 import '../../presentation/presenters/presenters.dart';
-import '../modals/alert_dialog.dart';
-import 'components/components.dart';
+import '../atoms/atoms.dart';
 
 class CreateRows extends StatefulWidget {
   const CreateRows({
@@ -48,10 +49,10 @@ class _CreateRowsState extends State<CreateRows> {
                       if (controller.showSelect)
                         Row(
                           children: [
-                            CheckboxAtom(
-                              value: controller.selecteds.contains(data),
-                              onChanged: (value) => controller.onSelect(value, data)
-                            ),
+                            CheckboxWidget(
+                                value: controller.selecteds.contains(data),
+                                onChanged: (value) =>
+                                    controller.onSelect(value, data)),
                           ],
                         ),
                       ...headers
@@ -67,31 +68,8 @@ class _CreateRowsState extends State<CreateRows> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            AlertDialogCompo(),
-                                            InkWell(
-                                              onTap: () {},
-                                              child: Icon(
-                                                Icons.add_chart_sharp,
-                                                size: 20,
-                                              ),
-                                            ),
-                                            InkWell(
-                                              onTap: () {
-                                                // widget.onItemSelect();
-                                                // presenter.printar();
-                                              },
-                                              child: Icon(
-                                                Icons.access_time_filled_sharp,
-                                                size: 20,
-                                              ),
-                                            ),
-                                            InkWell(
-                                              onTap: () {},
-                                              child: Icon(
-                                                Icons.account_balance_rounded,
-                                                size: 20,
-                                              ),
-                                            )
+                                            IncludeComponents(),
+                                            ExtractRelatory(),
                                           ],
                                         )
                                       : Text(
@@ -111,7 +89,7 @@ class _CreateRowsState extends State<CreateRows> {
               ),
             ),
             if (controller.isExpandRows && controller.expanded![index])
-              ExpandedRow()
+              ExpandedRowAtom()
           ],
         ),
       );

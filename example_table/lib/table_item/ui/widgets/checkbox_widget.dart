@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CheckboxAtom extends StatelessWidget {
+class CheckboxWidget extends StatelessWidget {
   final Function(bool?)? onChanged;
   final bool? value;
-  const CheckboxAtom({Key? key, required this.onChanged, this.value}) : super(key: key);
+  const CheckboxWidget({Key? key, required this.onChanged, this.value}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

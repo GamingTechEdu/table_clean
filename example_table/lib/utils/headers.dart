@@ -3,14 +3,14 @@ import 'package:responsive_table/responsive_table.dart';
 
 List<DatatableHeader> headers = [
   DatatableHeader(
-    text: "N RECEBIMENTO",
+    text: "NUMERO DE SERIE",
     value: "id",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
-    text: "CLIENTE",
+    text: "ITEM",
     value: "name",
     show: true,
     flex: 2,
@@ -19,35 +19,35 @@ List<DatatableHeader> headers = [
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
-    text: "Doc. ENTRADA",
+    text: "DATA CADASTRO",
     value: "sku",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
-    text: "ITEM",
+    text: "DEFEITO RELATADO",
     value: "category",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
-    text: "QUANTIDADE",
+    text: "INSP. ENTRADA",
     value: "price",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
-    text: "ABERTO EM",
+    text: "DEFEITO ENCONTRADO",
     value: "margin",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
-    text: "Doc. SAÍDA",
+    text: "NOTA FISCAL",
     value: "in_stock",
     show: true,
     sortable: true,
@@ -61,7 +61,7 @@ List<DatatableHeader> headers = [
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
-    text: "ABERTO POR",
+    text: "USUÁRIO",
     value: "received",
     show: true,
     sortable: false,

@@ -12,7 +12,7 @@ class NavigatePagesAtom extends StatefulWidget {
 }
 
 class _NavigatePagesAtomState extends State<NavigatePagesAtom> {
-   final GetxTablePresenter controller = Get.put(GetxTablePresenter());
+  final GetxTablePresenter controller = Get.put(GetxTablePresenter());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,18 +24,16 @@ class _NavigatePagesAtomState extends State<NavigatePagesAtom> {
         children: [
           IconButtonWidget(
             tooltip: "Voltar",
-            onPressed: () {
-              controller.backPage(controller);
-            },
+            onPressed: controller.currentPage == 1
+                ? null
+                : () => controller.backPage(controller),
             highlightColor: Colors.transparent,
             icon: Icon(Icons.arrow_back_ios, size: 16),
             padding: EdgeInsets.symmetric(horizontal: 15),
           ),
           IconButtonWidget(
             tooltip: "Próximo",
-            onPressed: () {
-              controller.nextPage(controller);
-            },
+            onPressed: () => controller.nextPage(controller),
             highlightColor: Colors.transparent,
             icon: Icon(Icons.arrow_forward_ios, size: 16),
             padding: EdgeInsets.symmetric(horizontal: 15),
