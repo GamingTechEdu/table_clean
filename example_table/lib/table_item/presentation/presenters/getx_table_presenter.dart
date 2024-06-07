@@ -2,7 +2,13 @@ import 'dart:math';
 
 import 'package:get/get.dart';
 
+import '../../../domain/usecases/usecase.dart';
+
 class GetxTablePresenter extends GetxController {
+  // final LoadSimuc load;
+
+  // GetxTablePresenter(this.load);
+
   int total = 100;
   String? sortColumn;
   int currentPage = 1;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import '../../../foundations/foundations.dart';
 import '../../presentation/presenters/presenters.dart';
 
@@ -11,6 +12,7 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GetxTablePresenter controller = Get.put(GetxTablePresenter());
+    // final controller = Provider.of<GetxTablePresenter>(context);
     return Container(
       height: 40,
       width: 300,

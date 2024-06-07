@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_table/responsive_table.dart';
 
 import '../../../foundations/foundations.dart';
@@ -8,6 +9,7 @@ import '../../presentation/presenters/presenters.dart';
 import '../molecules/molecules.dart';
 
 class InitTable extends StatefulWidget {
+  // final GetxTablePresenter controller;
   InitTable({Key? key}) : super(key: key);
   @override
   _InitTableState createState() => _InitTableState();
@@ -20,11 +22,7 @@ class _InitTableState extends State<InitTable> {
   void initState() {
     super.initState();
     controller.initializeData();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
+    //  widget.controller.initializeData();
   }
 
   @override
@@ -53,5 +51,10 @@ class _InitTableState extends State<InitTable> {
         },
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import '../../presentation/presenters/presenters.dart';
 import '../atoms/atoms.dart';
 
@@ -9,6 +10,7 @@ class FooterMolecule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GetxTablePresenter controller = Get.put(GetxTablePresenter());
+    // final controller = Provider.of<GetxTablePresenter>(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [

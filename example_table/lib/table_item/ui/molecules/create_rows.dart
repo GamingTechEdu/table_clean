@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pdf_creator_flutter/app.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_table_example/table_item/ui/components/components.dart';
 
 import '../../../foundations/foundations.dart';
@@ -100,6 +101,7 @@ class _CreateRowsState extends State<CreateRows> {
   @override
   Widget build(BuildContext context) {
     final GetxTablePresenter controller = Get.put(GetxTablePresenter());
+    // final controller = Provider.of<GetxTablePresenter>(context);
     return ListView(
       children: desktopList(controller),
     );

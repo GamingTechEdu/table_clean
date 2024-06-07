@@ -9,8 +9,8 @@ class IconButtonFilter extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButtonWidget(
       onPressed: () {},
-      tooltip: "Filtrar por:",
-      icon: Icon(Icons.filter_alt_rounded),
+      tooltip: "Relatório",
+      icon: Icon(Icons.assignment),
     );
   }
 }

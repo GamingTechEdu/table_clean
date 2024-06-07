@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import '../../../presentation/presenters/getx_table_presenter.dart';
 
 class RowsPerPageAtom extends StatefulWidget {
@@ -13,6 +14,7 @@ class _RowsPerPageAtomState extends State<RowsPerPageAtom> {
   final GetxTablePresenter controller = Get.put(GetxTablePresenter());
   @override
   Widget build(BuildContext context) {
+    // final controller = Provider.of<GetxTablePresenter>(context);
     return Container(
       height: 30,
       decoration: BoxDecoration(
