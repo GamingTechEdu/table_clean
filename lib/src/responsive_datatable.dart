@@ -1,6 +1,8 @@
+import 'package:adaptivex/adaptivex.dart';
 import 'package:flutter/material.dart';
-import '../responsive_table.dart';
+import 'package:responsive_table/src/datatable_header.dart';
 import 'decorations/default_decoration.dart';
+import 'tools/checkbox_style.dart';
 import 'tools/utils.dart';
 
 typedef void ItemSelectedCallback();

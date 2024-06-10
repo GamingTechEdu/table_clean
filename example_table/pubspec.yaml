@@ -21,8 +21,6 @@ dependencies:
     path: ../
   get: ^4.6.6
   provider: ^6.1.2
-  pdf_creator_flutter:
-    path: ../../pdf_creator
   equatable: ^2.0.5
   http: 0.13.3
   # The following adds the Cupertino Icons font to your application.

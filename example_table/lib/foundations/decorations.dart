@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_table/responsive_table.dart';
+import 'package:responsive_table/export.dart';
 
 import 'colors.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_table/responsive_table.dart';
+import 'package:responsive_table/export.dart';
 
 List<DatatableHeader> headers = [
   DatatableHeader(
@@ -13,7 +13,6 @@ List<DatatableHeader> headers = [
     text: "ITEM",
     value: "item",
     show: true,
-    flex: 2,
     sortable: true,
     comands: false,
     textAlign: TextAlign.center,
