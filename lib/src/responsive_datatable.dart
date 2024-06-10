@@ -8,7 +8,7 @@ typedef void ItemSelectedCallback();
 class ResponsiveDatatable extends StatefulWidget {
   // final ItemSelectedCallback onItemSelect;
   final Widget widgetLoad;
-  final Widget rows;
+  final Widget? rows;
   final bool showSelect;
   final List<DatatableHeader> headers;
   final double? heightActionHeader;
@@ -85,7 +85,7 @@ class ResponsiveDatatable extends StatefulWidget {
     this.selectedTextStyle,
     this.heightActionHeader,
     this.checkboxStyle,
-    required this.rows,
+    this.rows,
     required this.widgetLoad,
     // required this.onItemSelect,
   }) : super(key: key);
@@ -102,8 +102,7 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (widget.showSelect && widget.selecteds != null)
-            Container(width: 100),
+            Container(width: 30),
           ...widget.headers
               .where((header) => header.show == true)
               .map(
@@ -157,9 +156,9 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
         SizedBox(height: widget.heightActionHeader),
         if (widget.headers.isNotEmpty) desktopHeader(),
         if (widget.isLoading) widget.widgetLoad,
-        if (widget.autoHeight) widget.rows,
-        if (!widget.autoHeight) Expanded(child: widget.rows),
-        if (widget.footers != null) widget.footers!
+        if (widget.autoHeight) widget.rows!,
+        if (!widget.autoHeight) Expanded(child: widget.rows!),
+        if (widget.footers != null &&  widget.rows != null) widget.footers!
       ],
     );
   }

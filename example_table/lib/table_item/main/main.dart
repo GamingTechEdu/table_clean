@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_table_example/table_item/main/factories/form/form_factory.dart';
 
 import '../ui/organism/organism.dart';
+import 'factories/form/form.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (_) => InitTable(),
+        '/': (_) => InitTable(controller: makeGetxCreateSimucPresenter()),
       },
     );
   }

@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 import '../../../domain/usecases/usecase.dart';
 
 class GetxTablePresenter extends GetxController {
-  // final LoadSimuc load;
+  final LoadSimuc load;
 
-  // GetxTablePresenter(this.load);
+  GetxTablePresenter(this.load);
 
   int total = 100;
   String? sortColumn;
@@ -27,6 +27,17 @@ class GetxTablePresenter extends GetxController {
   List<Map<String, dynamic>> sourceOriginal = [];
   List<Map<String, dynamic>> sourceFiltered = [];
   bool isSearch = false;
+
+  initializeData() async {
+    mockPullData();
+    fetch();
+    update();
+  }
+
+  Future<List<Map<String, dynamic>>> fetch() async {
+    final source = await load.loadSimuc();
+    return source;
+  }
 
   List<Map<String, dynamic>> generateData({int n = 100}) {
     final List source = List.filled(n, Random.secure());
@@ -54,20 +65,16 @@ class GetxTablePresenter extends GetxController {
     return temps;
   }
 
-  initializeData() async {
-    mockPullData();
-    update();
-  }
-
   mockPullData() async {
     expanded = List.generate(currentPerPage!, (index) => false);
 
     isLoading = true;
-    Future.delayed(Duration(seconds: 3)).then((value) {
+    Future.delayed(Duration(seconds: 3)).then((value) async {
       sourceOriginal.clear();
-      sourceOriginal.addAll(generateData(n: random.nextInt(10000)));
+      sourceOriginal.addAll(await fetch());
       sourceFiltered = sourceOriginal;
       total = sourceFiltered.length;
+      print(total);
       source = sourceFiltered.getRange(0, currentPerPage!).toList();
       isLoading = false;
       update();

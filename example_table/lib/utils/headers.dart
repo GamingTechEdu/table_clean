@@ -4,14 +4,14 @@ import 'package:responsive_table/responsive_table.dart';
 List<DatatableHeader> headers = [
   DatatableHeader(
     text: "NUMERO DE SERIE",
-    value: "id",
+    value: "number_serie",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
     text: "ITEM",
-    value: "name",
+    value: "item",
     show: true,
     flex: 2,
     sortable: true,
@@ -20,67 +20,67 @@ List<DatatableHeader> headers = [
   ),
   DatatableHeader(
     text: "DATA CADASTRO",
-    value: "sku",
+    value: "date_register",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
     text: "DEFEITO RELATADO",
-    value: "category",
+    value: "defect_related",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
     text: "INSP. ENTRADA",
-    value: "price",
+    value: "insp_entrance",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
     text: "DEFEITO ENCONTRADO",
-    value: "margin",
+    value: "defect_found",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
     text: "NOTA FISCAL",
-    value: "in_stock",
+    value: "doc_exit",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
     text: "STATUS",
-    value: "alert",
+    value: "status",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
   DatatableHeader(
     text: "USUÁRIO",
-    value: "received",
+    value: "user",
     show: true,
     sortable: false,
-    sourceBuilder: (value, row) {
-      List list = List.from(value);
-      return Container(
-        child: Column(
-          children: [
-            Container(
-              width: 85,
-              child: LinearProgressIndicator(
-                value: list.first / list.last,
-              ),
-            ),
-            Text("${list.first} of ${list.last}")
-          ],
-        ),
-      );
-    },
+    // sourceBuilder: (value, row) {
+    //   List list = List.from(value);
+    //   return Container(
+    //     child: Column(
+    //       children: [
+    //         Container(
+    //           width: 85,
+    //           child: LinearProgressIndicator(
+    //             value: list.first / list.last,
+    //           ),
+    //         ),
+    //         Text("${list.first} of ${list.last}")
+    //       ],
+    //     ),
+    //   );
+    // },
     textAlign: TextAlign.center,
   ),
   DatatableHeader(

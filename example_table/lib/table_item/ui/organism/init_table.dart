@@ -1,54 +1,65 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_table/responsive_table.dart';
 
 import '../../../foundations/foundations.dart';
 import '../../../utils/utils.dart';
 import '../../presentation/presenters/presenters.dart';
+import '../atoms/progress_indicator.dart';
 import '../molecules/molecules.dart';
 
 class InitTable extends StatefulWidget {
-  // final GetxTablePresenter controller;
-  InitTable({Key? key}) : super(key: key);
+  final GetxTablePresenter controller;
+  InitTable({Key? key, required this.controller}) : super(key: key);
   @override
   _InitTableState createState() => _InitTableState();
 }
 
 class _InitTableState extends State<InitTable> {
-  final GetxTablePresenter controller = Get.put(GetxTablePresenter());
-
   @override
   void initState() {
     super.initState();
-    controller.initializeData();
-    //  widget.controller.initializeData();
+    widget.controller.initializeData();
   }
 
   @override
   Widget build(BuildContext context) {
-    return TemplateTableMolecule(
-      widget: GetBuilder<GetxTablePresenter>(
-        builder: (_) {
-          return ResponsiveDatatable(
-            title: DashboardMoleucle(),
-            rowAction: RowAction(),
-            widgetLoad: LinearProgressIndicator(),
-            rows: CreateRows(),
-            footers: FooterMolecule(),
-            reponseScreenSizes: [ScreenSize.xs],
-            headers: headers,
-            autoHeight: false,
-            isLoading: controller.isLoading,
-            heightActionHeader: 15,
-            sortColumn: controller.sortColumn,
-            sortAscending: controller.sortAscending,
-            onSort: (value) => controller.onSort(value),
-            onSelectAll: (value) => controller.onSelectAll(value),
-            headerDecoration: Decorations.headerDecoration,
-            headerTextStyle: TextDecoration.headerTextStyle,
-          );
-        },
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(0),
+                constraints: BoxConstraints(
+                  maxHeight: MediaQuery.sizeOf(context).height * 0.96,
+                ),
+                child: ListenableProvider(
+                  create: (_) => widget.controller,
+                  child: ResponsiveDatatable(
+                    title: DashboardMolecule(),
+                    rowAction: RowAction(),
+                    widgetLoad: CustomLinearProgressIndicator(),
+                    rows: CreateRows(),
+                    footers: FooterMolecule(),
+                    reponseScreenSizes: [ScreenSize.xs],
+                    headers: headers,
+                    autoHeight: false,
+                    isLoading: widget.controller.isLoading,
+                    heightActionHeader: 15,
+                    sortColumn: widget.controller.sortColumn,
+                    sortAscending: widget.controller.sortAscending,
+                    onSort: (value) => widget.controller.onSort(value),
+                    onSelectAll: (value) =>
+                        widget.controller.onSelectAll(value),
+                    headerDecoration: Decorations.headerDecoration,
+                    headerTextStyle: TextDecoration.headerTextStyle,
+                  ),
+                ))
+          ],
+        ),
       ),
     );
   }

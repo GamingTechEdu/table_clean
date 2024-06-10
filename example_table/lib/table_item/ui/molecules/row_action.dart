@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_table_example/table_item/ui/components/components.dart';
 
 import '../../../utils/spacers.dart';
 import '../../presentation/presenters/presenters.dart';
@@ -12,8 +10,7 @@ class RowAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GetxTablePresenter controller = Get.put(GetxTablePresenter());
-    // final controller = Provider.of<GetxTablePresenter>(context);
+    final controller = Provider.of<GetxTablePresenter>(context);
     return Container(
       padding: const EdgeInsets.all(5),
       decoration: const BoxDecoration(

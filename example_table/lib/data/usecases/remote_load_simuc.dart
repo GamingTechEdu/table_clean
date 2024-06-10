@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import '../../../domain/helpers/domain_error.dart';
 import '../../domain/entities/entities.dart';
+import 'package:http/http.dart' as http;
 import '../../domain/usecases/usecase.dart';
 import '../http/http.dart';
 import '../models/models.dart';
@@ -32,13 +35,21 @@ class RemoteLoadSimuc implements LoadSimuc {
   });
 
   @override
-  Future<List<SimucEntity>> loadSimuc() async {
+  Future<List<Map<String, dynamic>>> loadSimuc() async {
     try {
-      final httpResponse = await httpClient.request(url: url, method: 'get');
-      return httpResponse.map<SimucEntity>((json) {
-        final simucEntity = RemoteSimucModel.fromJson(json).toEntity();
-        return simucEntity;
-      }).toList();
+      final httpResponse = await http.get(Uri.parse(url));
+      List<dynamic> responseBody = json.decode(httpResponse.body);
+      List<Map<String, dynamic>> responseList =
+          responseBody.cast<Map<String, dynamic>>();
+      return responseList;
+
+      // final httpResponse = await httpClient.request(url: url, method: 'get');
+      // print(httpResponse);
+      // return httpResponse;
+      // return httpResponse.map<SimucEntity>((json) {
+      //   final simucEntity = RemoteSimucModel.fromJson(json).toEntity();
+      //   return simucEntity;
+      // }).toList();
     } on HttpError catch (error) {
       throw error == HttpError.forbidden
           ? DomainError.accessDenied

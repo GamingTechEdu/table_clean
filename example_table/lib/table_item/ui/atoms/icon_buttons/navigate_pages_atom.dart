@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:responsive_table_example/table_item/ui/widgets/widgets.dart';
 
 import '../../../presentation/presenters/getx_table_presenter.dart';
-import 'package:get/get.dart';
 
 class NavigatePagesAtom extends StatefulWidget {
   const NavigatePagesAtom({Key? key}) : super(key: key);
@@ -13,11 +12,9 @@ class NavigatePagesAtom extends StatefulWidget {
 }
 
 class _NavigatePagesAtomState extends State<NavigatePagesAtom> {
-  final GetxTablePresenter controller = Get.put(GetxTablePresenter());
-  
   @override
   Widget build(BuildContext context) {
-    // final controller = Provider.of<GetxTablePresenter>(context);
+    final controller = Provider.of<GetxTablePresenter>(context);
     return Container(
       height: 30,
       decoration: BoxDecoration(

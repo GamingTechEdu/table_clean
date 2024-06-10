@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:pdf_creator_flutter/app.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_table_example/table_item/ui/components/components.dart';
-
 import '../../../foundations/foundations.dart';
 import '../../../utils/utils.dart';
 import '../../presentation/presenters/presenters.dart';
@@ -19,11 +15,20 @@ class CreateRows extends StatefulWidget {
 }
 
 class _CreateRowsState extends State<CreateRows> {
+
   List<Widget> desktopList(GetxTablePresenter controller) {
     List<Widget> widgets = [];
 
     for (var index = 0; index < controller.source.length; index++) {
       final data = controller.source[index];
+      if(data["defect_found"] == null){
+        data["defect_found"] = "EM MANUTENÇÃO";
+      };
+      if(data["status"] == "1"){
+        data["status"] = "Concluído";
+      }else if(data["status"] == "0"){
+        data["status"] = "Cadastrado";
+      };
 
       widgets.add(
         Column(
@@ -63,7 +68,7 @@ class _CreateRowsState extends State<CreateRows> {
                               flex: header.flex,
                               child: header.sourceBuilder != null
                                   ? header.sourceBuilder!(
-                                      data[header.value], data)
+                                      data[header.value], data) 
                                   : header.comands
                                       ? Row(
                                           mainAxisAlignment:
@@ -100,8 +105,8 @@ class _CreateRowsState extends State<CreateRows> {
 
   @override
   Widget build(BuildContext context) {
-    final GetxTablePresenter controller = Get.put(GetxTablePresenter());
-    // final controller = Provider.of<GetxTablePresenter>(context);
+    // final GetxTablePresenter controller = Get.put(GetxTablePresenter());
+    final controller = Provider.of<GetxTablePresenter>(context);
     return ListView(
       children: desktopList(controller),
     );
