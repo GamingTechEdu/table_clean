@@ -16,20 +16,15 @@ class CreateRows extends StatefulWidget {
 }
 
 class _CreateRowsState extends State<CreateRows> {
-
   List<Widget> desktopList(GetxTablePresenter controller) {
     List<Widget> widgets = [];
 
     for (var index = 0; index < controller.source.length; index++) {
       final data = controller.source[index];
-      if(data["defect_found"] == null){
+      if (data["defect_found"] == null) {
         data["defect_found"] = "EM MANUTENÇÃO";
-      };
-      if(data["status"] == "1"){
-        data["status"] = "Concluído";
-      }else if(data["status"] == "0"){
-        data["status"] = "Cadastrado";
-      };
+      }
+      ;
 
       widgets.add(
         Column(
@@ -69,7 +64,7 @@ class _CreateRowsState extends State<CreateRows> {
                               flex: header.flex,
                               child: header.sourceBuilder != null
                                   ? header.sourceBuilder!(
-                                      data[header.value], data) 
+                                      data[header.value], data)
                                   : header.comands
                                       ? Row(
                                           mainAxisAlignment:

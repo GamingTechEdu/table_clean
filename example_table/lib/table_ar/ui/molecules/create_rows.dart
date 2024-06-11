@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_table_example/table_item/main/factories/form/form.dart';
+import 'package:responsive_table_example/table_item/presentation/presenters/getx_table_presenter.dart';
 import 'package:responsive_table_example/utils/headers/header_ar.dart';
 import '../../../foundations/foundations.dart';
 
+import '../../../table_item/ui/organism/organism.dart';
 import '../../../utils/utils.dart';
 import '../../presentation/presenters/presenters.dart';
 import '../atoms/atoms.dart';
@@ -38,7 +41,7 @@ class _CreateRowsState extends State<CreateRows> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SecondPage()),
+                    MaterialPageRoute(builder: (context) => InitTable(controller: makeGetxCreateSimucPresenter(),)),
                   );
                   setState(() {
                     controller.expanded![index] = !controller.expanded![index];

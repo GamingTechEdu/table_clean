@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_table_example/table_item/ui/widgets/widgets.dart';
+
+import '../widgets/search_bar_widget.dart';
+
 
 class SearchBarAtom extends StatefulWidget {
   const SearchBarAtom({Key? key}) : super(key: key);

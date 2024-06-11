@@ -25,6 +25,10 @@ class _InitTableState extends State<InitTable> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 30,
+        iconTheme: IconThemeData(size: 20),
+      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

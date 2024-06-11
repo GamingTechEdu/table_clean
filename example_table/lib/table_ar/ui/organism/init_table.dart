@@ -8,14 +8,14 @@ import '../../presentation/presenters/presenters.dart';
 import '../atoms/progress_indicator.dart';
 import '../molecules/molecules.dart';
 
-class InitTable extends StatefulWidget {
+class InitTableAr extends StatefulWidget {
   final GetxArPresenter controller;
-  InitTable({Key? key, required this.controller}) : super(key: key);
+  InitTableAr({Key? key, required this.controller}) : super(key: key);
   @override
-  _InitTableState createState() => _InitTableState();
+  _InitTableArState createState() => _InitTableArState();
 }
 
-class _InitTableState extends State<InitTable> {
+class _InitTableArState extends State<InitTableAr> {
   @override
   void initState() {
     super.initState();
