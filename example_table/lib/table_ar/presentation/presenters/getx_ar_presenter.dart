@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 
 import '../../../domain/usecases/usecase.dart';
 
-class GetxTablePresenter extends GetxController {
-  final LoadSimuc load;
+class GetxArPresenter extends GetxController {
+  final LoadAr load;
 
-  GetxTablePresenter(this.load);
+  GetxArPresenter(this.load);
 
   int total = 100;
   String? sortColumn;
@@ -35,7 +35,23 @@ class GetxTablePresenter extends GetxController {
   }
 
   Future<List<Map<String, dynamic>>> fetch() async {
-    final source = await load.loadSimuc();
+    final source = await load.loadAr();
+    // List<Map<String, dynamic>> temps = [];
+    // ignore: unused_local_variable
+    // for (var data in source) {
+    //   print(data);
+      // temps.add({
+      //   "client": source[0][0],
+      //   "doc_type": source[1],
+      //   "doc_entrance": source[2],
+      //   "position": source[3],
+      //   "quantity_itens": [0 , source[4]],
+      //   "date_open": source[5],
+      //   "user": source[6],
+      // });
+    // }
+    // update();
+    // return temps;
     return source;
   }
 

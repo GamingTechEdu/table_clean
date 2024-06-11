@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_table/export.dart';
 
-List<DatatableHeader> headers = [
+List<DatatableHeader> headerItem = [
   DatatableHeader(
     text: "NUMERO DE SERIE",
     value: "number_serie",

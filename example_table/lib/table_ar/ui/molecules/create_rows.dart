@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_table_example/utils/headers/header_ar.dart';
 import '../../../foundations/foundations.dart';
 
 import '../../../utils/utils.dart';
@@ -16,20 +17,11 @@ class CreateRows extends StatefulWidget {
 }
 
 class _CreateRowsState extends State<CreateRows> {
-
-  List<Widget> desktopList(GetxTablePresenter controller) {
+  List<Widget> desktopList(GetxArPresenter controller) {
     List<Widget> widgets = [];
 
     for (var index = 0; index < controller.source.length; index++) {
       final data = controller.source[index];
-      if(data["defect_found"] == null){
-        data["defect_found"] = "EM MANUTENÇÃO";
-      };
-      if(data["status"] == "1"){
-        data["status"] = "Concluído";
-      }else if(data["status"] == "0"){
-        data["status"] = "Cadastrado";
-      };
 
       widgets.add(
         Column(
@@ -44,6 +36,10 @@ class _CreateRowsState extends State<CreateRows> {
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondPage()),
+                  );
                   setState(() {
                     controller.expanded![index] = !controller.expanded![index];
                   });
@@ -62,14 +58,14 @@ class _CreateRowsState extends State<CreateRows> {
                                     controller.onSelect(value, data)),
                           ],
                         ),
-                      ...headerItem
+                      ...headerAr
                           .where((header) => header.show == true)
                           .map(
                             (header) => Expanded(
                               flex: header.flex,
                               child: header.sourceBuilder != null
                                   ? header.sourceBuilder!(
-                                      data[header.value], data) 
+                                      data[header.value], data)
                                   : header.comands
                                       ? Row(
                                           mainAxisAlignment:
@@ -95,8 +91,8 @@ class _CreateRowsState extends State<CreateRows> {
                 ),
               ),
             ),
-            if (controller.isExpandRows && controller.expanded![index])
-              ExpandedRowAtom()
+            // if (controller.isExpandRows && controller.expanded![index])
+            //   ExpandedRowAtom()
           ],
         ),
       );
@@ -107,9 +103,24 @@ class _CreateRowsState extends State<CreateRows> {
   @override
   Widget build(BuildContext context) {
     // final GetxTablePresenter controller = Get.put(GetxTablePresenter());
-    final controller = Provider.of<GetxTablePresenter>(context);
+    final controller = Provider.of<GetxArPresenter>(context);
     return ListView(
       children: desktopList(controller),
+    );
+  }
+}
+
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second Page'),
+      ),
+      body: Center(
+        child: Text('Welcome to the Second Page!'),
+      ),
     );
   }
 }

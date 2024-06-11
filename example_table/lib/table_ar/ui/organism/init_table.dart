@@ -3,13 +3,13 @@ import 'package:provider/provider.dart';
 import 'package:responsive_table/export.dart';
 
 import '../../../foundations/foundations.dart';
-import '../../../utils/utils.dart';
+import '../../../utils/headers/header_ar.dart';
 import '../../presentation/presenters/presenters.dart';
 import '../atoms/progress_indicator.dart';
 import '../molecules/molecules.dart';
 
 class InitTable extends StatefulWidget {
-  final GetxTablePresenter controller;
+  final GetxArPresenter controller;
   InitTable({Key? key, required this.controller}) : super(key: key);
   @override
   _InitTableState createState() => _InitTableState();
@@ -45,7 +45,7 @@ class _InitTableState extends State<InitTable> {
                     rows: CreateRows(),
                     footers: FooterMolecule(),
                     reponseScreenSizes: [ScreenSize.xs],
-                    headers: headerItem,
+                    headers: headerAr,
                     autoHeight: false,
                     isLoading: widget.controller.isLoading,
                     heightActionHeader: 15,

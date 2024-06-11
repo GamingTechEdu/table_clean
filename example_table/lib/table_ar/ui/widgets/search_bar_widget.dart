@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../foundations/foundations.dart';
-import '../../../table_ar/presentation/presenters/presenters.dart';
 import '../../presentation/presenters/presenters.dart';
 
 class SearchBarWidget extends StatelessWidget {
