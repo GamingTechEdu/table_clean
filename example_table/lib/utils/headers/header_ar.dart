@@ -37,6 +37,7 @@ List<DatatableHeader> headerAr = [
   //   show: true,
   //   sortable: false,
   //   sourceBuilder: (value, row) {
+  //     value = [0 + 20, 150];
   //     List list = List.from(value);
   //     return Container(
   //       child: Column(
@@ -60,6 +61,23 @@ List<DatatableHeader> headerAr = [
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
+    sourceBuilder: (value, row) {
+      value = [5, int.parse(value)];
+      List list = List.from(value);
+      return Container(
+        child: Column(
+          children: [
+            Container(
+              width: 85,
+              child: LinearProgressIndicator(
+                value: list.first / list.last,
+              ),
+            ),
+            Text("${list.first} of ${list.last}")
+          ],
+        ),
+      );
+    },
   ),
   DatatableHeader(
     text: "DATA ABERTURA",
@@ -75,12 +93,12 @@ List<DatatableHeader> headerAr = [
     sortable: true,
     textAlign: TextAlign.center,
   ),
-  DatatableHeader(
-    text: "COMANDOS",
-    value: "comand",
-    show: true,
-    sortable: false,
-    comands: true,
-    textAlign: TextAlign.center,
-  ),
+  // DatatableHeader(
+  //   text: "COMANDOS",
+  //   value: "comand",
+  //   show: true,
+  //   sortable: false,
+  //   comands: true,
+  //   textAlign: TextAlign.center,
+  // ),
 ];

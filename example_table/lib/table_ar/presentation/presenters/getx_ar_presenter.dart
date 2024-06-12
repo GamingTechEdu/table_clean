@@ -73,7 +73,6 @@ class GetxArPresenter extends GetxController {
         "in_stock": "${i}0",
         "alert": "5",
         "received": [i + 20, 150],
-        // "comand":
       });
       i++;
     }
@@ -85,7 +84,7 @@ class GetxArPresenter extends GetxController {
     expanded = List.generate(currentPerPage!, (index) => false);
 
     isLoading = true;
-    Future.delayed(Duration(seconds: 3)).then((value) async {
+    Future.delayed(Duration(seconds: 1)).then((value) async {
       sourceOriginal.clear();
       sourceOriginal.addAll(await fetch());
       sourceFiltered = sourceOriginal;

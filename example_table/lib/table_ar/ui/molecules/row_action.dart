@@ -31,22 +31,22 @@ class RowAction extends StatelessWidget {
             Spacers.hV,
             SearchBarAtom(), //TODO: Faltando gerenciamento de estado
             SizedBox(width: 50),
-            Container(
-              width: 400,
-              child: TabBar(
-                indicatorColor: const Color.fromARGB(255, 8, 8, 8),
-                indicatorWeight: 1,
-                dividerHeight: 0,
-                labelColor: Colors.white,
-                tabs: [
-                  Tab(text: 'Em Andamento'),
-                  Tab(text: 'Atrasadas'),
-                  Tab(text: 'Finalizadas'),
-                ],
-              ),
-            ),
-            Spacer(),
-            IconButtonFilter(), //TODO: Faltando gerenciamento de estado
+            // Container(
+            //   width: 400,
+            //   child: TabBar(
+            //     indicatorColor: const Color.fromARGB(255, 8, 8, 8),
+            //     indicatorWeight: 1,
+            //     dividerHeight: 0,
+            //     labelColor: Colors.white,
+            //     tabs: [
+            //       Tab(text: 'Em Andamento'),
+            //       Tab(text: 'Atrasadas'),
+            //       Tab(text: 'Finalizadas'),
+            //     ],
+            //   ),
+            // ),
+            // Spacer(),
+            // IconButtonFilter(), 
           ],
         ),
       ),

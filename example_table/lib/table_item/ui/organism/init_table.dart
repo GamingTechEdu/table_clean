@@ -10,7 +10,8 @@ import '../molecules/molecules.dart';
 
 class InitTable extends StatefulWidget {
   final GetxTablePresenter controller;
-  InitTable({Key? key, required this.controller}) : super(key: key);
+  final dynamic data;
+  InitTable({Key? key, required this.controller, this.data}) : super(key: key);
   @override
   _InitTableState createState() => _InitTableState();
 }
@@ -46,7 +47,9 @@ class _InitTableState extends State<InitTable> {
                     title: DashboardMolecule(),
                     rowAction: RowAction(),
                     widgetLoad: CustomLinearProgressIndicator(),
-                    rows: CreateRows(),
+                    rows: CreateRows(
+                      data: widget.data,
+                    ),
                     footers: FooterMolecule(),
                     reponseScreenSizes: [ScreenSize.xs],
                     headers: headerItem,
