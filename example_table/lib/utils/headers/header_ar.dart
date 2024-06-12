@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_table/export.dart';
 
+import '../../table_ar/ui/atoms/alter_data.dart';
+
 List<DatatableHeader> headerAr = [
   DatatableHeader(
     text: "CLIENTE",
@@ -80,11 +82,12 @@ List<DatatableHeader> headerAr = [
     // },
   ),
   DatatableHeader(
-      text: "DATA ABERTURA",
-      value: "date_open",
-      show: true,
-      sortable: true,
-      textAlign: TextAlign.center,
+    text: "DATA ABERTURA",
+    value: "date_open",
+    show: true,
+    sortable: true,
+    textAlign: TextAlign.center,
+    sourceBuilder: (value, row) => AlterDate(value: value),
   ),
   DatatableHeader(
     text: "USUÁRIO",
