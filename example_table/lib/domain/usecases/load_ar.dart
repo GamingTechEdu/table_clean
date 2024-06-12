@@ -1,3 +1,5 @@
+import '../entities/entities.dart';
+
 abstract class LoadAr {
-  Future<List<Map<String, dynamic>>> loadAr();
+  Future<List<ArEntity>> loadAr();
 }

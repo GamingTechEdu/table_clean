@@ -14,7 +14,6 @@ class ResponsiveDatatable extends StatefulWidget {
   final Widget? title;
   final Widget? rowAction;
   final Widget? footers;
-  final Function(bool? value)? onSelectAll;
   final Function(bool? value, Map<String, dynamic> data)? onSelect;
   final bool isLoading;
   final bool autoHeight;
@@ -43,7 +42,6 @@ class ResponsiveDatatable extends StatefulWidget {
   const ResponsiveDatatable({
     Key? key,
     this.showSelect = false,
-    this.onSelectAll,
     this.onSelect,
     // this.onTabRow,
     this.selecteds,
@@ -81,57 +79,6 @@ class ResponsiveDatatable extends StatefulWidget {
 }
 
 class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
-  // Widget desktopHeader() {
-  //   final _headerDecoration = widget.headerDecoration ?? defaultDesktopHeader;
-  //   return Container(
-  //     decoration: _headerDecoration,
-  //     child: Row(
-  //       mainAxisSize: MainAxisSize.min,
-  //       children: [
-  //           Container(width: 30),
-  //         ...widget.headers
-  //             .where((header) => header.show == true)
-  //             .map(
-  //               (header) => Expanded(
-  //                   flex: header.flex,
-  //                   child: InkWell(
-  //                     onTap: () {
-  //                       if (widget.onSort != null && header.sortable) {
-  //                         widget.onSort!(header.value);
-  //                       }
-  //                     },
-  //                     child: header.headerBuilder != null
-  //                         ? header.headerBuilder!(header.value)
-  //                         : Container(
-  //                             padding: const EdgeInsets.all(11),
-  //                             alignment:
-  //                                 Utilities.headerAlignSwitch(header.textAlign),
-  //                             child: Wrap(
-  //                               crossAxisAlignment: WrapCrossAlignment.center,
-  //                               children: [
-  //                                 Text(
-  //                                   header.text,
-  //                                   textAlign: header.textAlign,
-  //                                   style: widget.headerTextStyle,
-  //                                 ),
-  //                                 if (widget.sortColumn != null &&
-  //                                     widget.sortColumn == header.value)
-  //                                   widget.sortAscending!
-  //                                       ? const Icon(Icons.arrow_downward,
-  //                                           size: 15)
-  //                                       : const Icon(Icons.arrow_upward,
-  //                                           size: 15)
-  //                               ],
-  //                             ),
-  //                           ),
-  //                   )),
-  //             )
-  //             .toList()
-  //       ],
-  //     ),
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Column(

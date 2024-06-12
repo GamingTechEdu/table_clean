@@ -47,8 +47,6 @@ class _InitTableArState extends State<InitTableAr> {
                     autoHeight: false,
                     isLoading: widget.controller.isLoading,
                     heightActionHeader: 15,
-                    onSelectAll: (value) =>
-                        widget.controller.onSelectAll(value),
                   ),
                 ))
           ],

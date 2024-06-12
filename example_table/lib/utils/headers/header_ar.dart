@@ -61,23 +61,23 @@ List<DatatableHeader> headerAr = [
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
-    sourceBuilder: (value, row) {
-      value = [5, int.parse(value)];
-      List list = List.from(value);
-      return Container(
-        child: Column(
-          children: [
-            Container(
-              width: 85,
-              child: LinearProgressIndicator(
-                value: list.first / list.last,
-              ),
-            ),
-            Text("${list.first} of ${list.last}")
-          ],
-        ),
-      );
-    },
+    // sourceBuilder: (value, row) {
+    //   value = [5, int.parse(value)];
+    //   List list = List.from(value);
+    //   return Container(
+    //     child: Column(
+    //       children: [
+    //         Container(
+    //           width: 85,
+    //           child: LinearProgressIndicator(
+    //             value: list.first / list.last,
+    //           ),
+    //         ),
+    //         Text("${list.first} of ${list.last}")
+    //       ],
+    //     ),
+    //   );
+    // },
   ),
   DatatableHeader(
       text: "DATA ABERTURA",

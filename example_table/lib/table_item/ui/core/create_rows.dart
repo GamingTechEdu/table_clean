@@ -1,7 +1,4 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../../../foundations/foundations.dart';
 
@@ -10,7 +7,8 @@ import '../../presentation/presenters/presenters.dart';
 import '../atoms/atoms.dart';
 
 class CreateRows extends StatefulWidget {
-  CreateRows({Key? key}) : super(key: key);
+  dynamic data;
+  CreateRows({Key? key, this.data}) : super(key: key);
 
   @override
   State<CreateRows> createState() => _CreateRowsState();
@@ -21,9 +19,9 @@ class _CreateRowsState extends State<CreateRows> {
     List<Widget> widgets = [];
 
     for (var index = 0; index < controller.source.length; index++) {
-      var data = controller.source[index];
-      // if (data["defect_found"] == null) {
-      //   data["defect_found"] = "EM MANUTENÇÃO";
+      widget.data = controller.source[index];
+      // if (widget.data["defect_found"] == null) {
+      //   widget.data["defect_found"] = "EM MANUTENÇÃO";
       // }
       // ;
 
@@ -33,7 +31,7 @@ class _CreateRowsState extends State<CreateRows> {
             const SizedBox(height: 10),
             Container(
               padding: EdgeInsets.all(controller.showSelect ? 0 : 11),
-              decoration: controller.selecteds.contains(data)
+              decoration: controller.selecteds.contains(widget.data)
                   ? Decorations.selectedDecoration
                   : Decorations.rowDecoration,
               child: InkWell(
@@ -54,9 +52,9 @@ class _CreateRowsState extends State<CreateRows> {
                           children: [
                             CheckboxWidget(
                                 value:
-                                    controller.selecteds.contains(data),
+                                    controller.selecteds.contains(widget.data),
                                 onChanged: (value) =>
-                                    controller.onSelect(value, data)),
+                                    controller.onSelect(value, widget.data)),
                           ],
                         ),
                       ...headerItem
@@ -66,7 +64,7 @@ class _CreateRowsState extends State<CreateRows> {
                               flex: header.flex,
                               child: header.sourceBuilder != null
                                   ? header.sourceBuilder!(
-                                      data.getProperty(header.value), data)
+                                      widget.data.getProperty(header.value), widget.data)
                                   : header.comands
                                       ? Row(
                                           mainAxisAlignment:
@@ -77,10 +75,10 @@ class _CreateRowsState extends State<CreateRows> {
                                           ],
                                         )
                                       : Text(
-                                          "${data.getProperty(header.value)}",
+                                          "${widget.data.getProperty(header.value)}",
                                           textAlign: header.textAlign,
                                           style: controller.selecteds
-                                                  .contains(data)
+                                                  .contains(widget.data)
                                               ? TextDecoration.selectedTextStyle
                                               : TextDecoration.rowTextStyle,
                                         ),

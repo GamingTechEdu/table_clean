@@ -31,7 +31,6 @@ class GetxTablePresenter extends GetxController {
 
   initializeData() async {
     mockPullData();
-    fetch();
     update();
   }
 

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_table/export.dart';
 
-import '../../../foundations/foundations.dart';
-import '../../../utils/utils.dart';
 import '../../presentation/presenters/presenters.dart';
 import '../atoms/progress_indicator.dart';
 import '../core/core.dart';
@@ -55,8 +53,6 @@ class _InitTableState extends State<InitTable> {
                     autoHeight: false,
                     isLoading: widget.controller.isLoading,
                     heightActionHeader: 15,
-                    onSelectAll: (value) =>
-                        widget.controller.onSelectAll(value),
                   ),
                 ))
           ],

@@ -22,7 +22,7 @@ class _CreateRowsState extends State<CreateRows> {
     List<Widget> widgets = [];
 
     for (var index = 0; index < controller.source.length; index++) {
-      final data = controller.source[index];
+      var data = controller.source[index];
 
       widgets.add(
         Column(
@@ -41,7 +41,7 @@ class _CreateRowsState extends State<CreateRows> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => InitTable(
-                              data: data["ar"],
+                              data: data.ar,
                               controller: makeGetxCreateSimucPresenter(),
                             )),
                   );
@@ -70,7 +70,7 @@ class _CreateRowsState extends State<CreateRows> {
                               flex: header.flex,
                               child: header.sourceBuilder != null
                                   ? header.sourceBuilder!(
-                                      data[header.value], data)
+                                      data.getProperty(header.value), data)
                                   : header.comands
                                       ? Row(
                                           mainAxisAlignment:
@@ -81,7 +81,7 @@ class _CreateRowsState extends State<CreateRows> {
                                           ],
                                         )
                                       : Text(
-                                          "${data[header.value]}",
+                                          "${data.getProperty(header.value)}",
                                           textAlign: header.textAlign,
                                           style: controller.selecteds
                                                   .contains(data)

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:get/get.dart';
 
+import '../../../domain/entities/entities.dart';
 import '../../../domain/usecases/usecase.dart';
 
 class GetxArPresenter extends GetxController {
@@ -22,11 +23,12 @@ class GetxArPresenter extends GetxController {
   bool isExpandRows = true;
   String selectableKey = "id";
   List<int> perPages = [10, 20, 50, 100];
-  List<Map<String, dynamic>> source = [];
-  List<Map<String, dynamic>> selecteds = [];
-  List<Map<String, dynamic>> sourceOriginal = [];
-  List<Map<String, dynamic>> sourceFiltered = [];
+  List<ArEntity> source = [];
+  List<ArEntity> selecteds = [];
+  List<ArEntity> sourceOriginal = [];
+  List<ArEntity> sourceFiltered = [];
   bool isSearch = false;
+
 
   initializeData() async {
     mockPullData();
@@ -47,24 +49,8 @@ class GetxArPresenter extends GetxController {
   // }
 
 
-  Future<List<Map<String, dynamic>>> fetch() async {
+  Future<List<ArEntity>> fetch() async {
     final source = await load.loadAr();
-    // List<Map<String, dynamic>> temps = [];
-    // ignore: unused_local_variable
-    // for (var data in source) {
-    //   print(data);
-      // temps.add({
-      //   "client": source[0][0],
-      //   "doc_type": source[1],
-      //   "doc_entrance": source[2],
-      //   "position": source[3],
-      //   "quantity_itens": [0 , source[4]],
-      //   "date_open": source[5],
-      //   "user": source[6],
-      // });
-    // }
-    // update();
-    // return temps;
     return source;
   }
 
@@ -131,7 +117,7 @@ class GetxArPresenter extends GetxController {
         sourceFiltered = sourceOriginal;
       } else {
         sourceFiltered = sourceOriginal
-            .where((data) => data[searchKey!]
+            .where((data) => data.ar
                 .toString()
                 .toLowerCase()
                 .contains(value.toString().toLowerCase()))
@@ -155,11 +141,11 @@ class GetxArPresenter extends GetxController {
     sortColumn = value;
     sortAscending = !sortAscending;
     if (sortAscending) {
-      sourceFiltered
-          .sort((a, b) => b["${sortColumn}"].compareTo(a["${sortColumn}"]));
+      sourceFiltered.sort((a, b) =>
+          b.getProperty(sortColumn!).compareTo(a.getProperty(sortColumn!)));
     } else {
-      sourceFiltered
-          .sort((a, b) => a["${sortColumn}"].compareTo(b["${sortColumn}"]));
+      sourceFiltered.sort((a, b) =>
+          a.getProperty(sortColumn!).compareTo(b.getProperty(sortColumn!)));
     }
     var rangeTop = currentPerPage! < sourceFiltered.length
         ? currentPerPage!

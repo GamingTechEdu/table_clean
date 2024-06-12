@@ -36,11 +36,10 @@ class RemoteSimucModel {
         docExit: json?['doc_exit'] ?? '',
         status: json?['status'] ?? '',
         user: json?['user'] ?? '',
-        arId: json?['ar_id'] ?? ''
-        );
+        arId: json?['ar_id'] ?? '');
   }
 
-   SimucEntity toEntity() => SimucEntity(
+  SimucEntity toEntity() => SimucEntity(
         numberSerie: numberSerie,
         item: item,
         dateRegister: dateRegister,
@@ -48,8 +47,8 @@ class RemoteSimucModel {
         inspEntrance: inspEntrance,
         defectFound: defectFound,
         docExit: docExit,
-        status:status,
+        status: status,
         user: user,
-        arId: arId
+        arId: arId,
       );
 }
