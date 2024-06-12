@@ -80,11 +80,11 @@ List<DatatableHeader> headerAr = [
     },
   ),
   DatatableHeader(
-    text: "DATA ABERTURA",
-    value: "date_open",
-    show: true,
-    sortable: true,
-    textAlign: TextAlign.center,
+      text: "DATA ABERTURA",
+      value: "date_open",
+      show: true,
+      sortable: true,
+      textAlign: TextAlign.center,
   ),
   DatatableHeader(
     text: "USUÁRIO",

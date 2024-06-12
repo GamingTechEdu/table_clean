@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_table/export.dart';
-
-import '../../../foundations/foundations.dart';
-import '../../../utils/headers/header_ar.dart';
+import '../../core/core.dart';
 import '../../presentation/presenters/presenters.dart';
 import '../atoms/progress_indicator.dart';
 import '../molecules/molecules.dart';
@@ -39,23 +37,18 @@ class _InitTableArState extends State<InitTableAr> {
                 child: ListenableProvider(
                   create: (_) => widget.controller,
                   child: ResponsiveDatatable(
+                    headers: Header(),
                     title: DashboardMolecule(),
                     rowAction: RowAction(),
                     widgetLoad: CustomLinearProgressIndicator(),
                     rows: CreateRows(),
                     footers: FooterMolecule(),
                     reponseScreenSizes: [ScreenSize.xs],
-                    headers: headerAr,
                     autoHeight: false,
                     isLoading: widget.controller.isLoading,
                     heightActionHeader: 15,
-                    sortColumn: widget.controller.sortColumn,
-                    sortAscending: widget.controller.sortAscending,
-                    onSort: (value) => widget.controller.onSort(value),
                     onSelectAll: (value) =>
                         widget.controller.onSelectAll(value),
-                    headerDecoration: Decorations.headerDecoration,
-                    headerTextStyle: TextDecoration.headerTextStyle,
                   ),
                 ))
           ],

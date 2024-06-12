@@ -34,6 +34,19 @@ class GetxArPresenter extends GetxController {
     update();
   }
 
+  //  String formatDate(String inputDate) {
+  //   try {
+  //     final inputFormat = DateFormat('yyyy-MM-dd');
+  //     final outputFormat = DateFormat('dd-MM-yyyy');
+  //     final date = inputFormat.parse(inputDate);
+  //     return outputFormat.format(date);
+  //   } catch (e) {
+  //     print('Erro ao formatar a data: $e');
+  //     return '';
+  //   }
+  // }
+
+
   Future<List<Map<String, dynamic>>> fetch() async {
     final source = await load.loadAr();
     // List<Map<String, dynamic>> temps = [];

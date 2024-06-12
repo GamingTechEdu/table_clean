@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_table/export.dart';
 
-List<DatatableHeader> headerItem = [
-  DatatableHeader(
+List<DatatableHeaderItem> headerItem = [
+  DatatableHeaderItem(
     text: "NUMERO DE SERIE",
     value: "number_serie",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
-  DatatableHeader(
+  DatatableHeaderItem(
     text: "ITEM",
     value: "item",
     show: true,
@@ -17,35 +17,35 @@ List<DatatableHeader> headerItem = [
     comands: false,
     textAlign: TextAlign.center,
   ),
-  DatatableHeader(
+  DatatableHeaderItem(
     text: "DATA CADASTRO",
     value: "date_register",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
-  DatatableHeader(
+  DatatableHeaderItem(
     text: "DEFEITO RELATADO",
     value: "defect_related",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
-  DatatableHeader(
+  DatatableHeaderItem(
     text: "INSP. ENTRADA",
     value: "insp_entrance",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
-  DatatableHeader(
+  DatatableHeaderItem(
     text: "DEFEITO ENCONTRADO",
     value: "defect_found",
     show: true,
     sortable: true,
     textAlign: TextAlign.center,
   ),
-  DatatableHeader(
+  DatatableHeaderItem(
       text: "NOTA FISCAL",
       value: "doc_exit",
       show: true,
@@ -62,7 +62,7 @@ List<DatatableHeader> headerItem = [
             );
         }
       }),
-  DatatableHeader(
+  DatatableHeaderItem(
       text: "STATUS",
       value: "status",
       show: true,
@@ -131,7 +131,7 @@ List<DatatableHeader> headerItem = [
             return Container();
         }
       }),
-  DatatableHeader(
+  DatatableHeaderItem(
     text: "USUÁRIO",
     value: "user",
     show: true,
@@ -154,7 +154,7 @@ List<DatatableHeader> headerItem = [
     // },
     textAlign: TextAlign.center,
   ),
-  DatatableHeader(
+  DatatableHeaderItem(
     text: "COMANDOS",
     value: "comand",
     show: true,

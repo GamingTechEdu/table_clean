@@ -38,4 +38,31 @@ class SimucEntity extends Equatable {
     required this.user,
     required this.arId,
   });
+
+  dynamic getProperty(String key) {
+    switch (key) {
+      case 'number_serie':
+        return numberSerie;
+      case 'item':
+        return item;
+      case 'date_register':
+        return dateRegister;
+      case 'defect_related':
+        return defectRelated;
+      case 'insp_entrance':
+        return inspEntrance;
+      case 'defect_found':
+        return defectFound;
+      case 'doc_exit':
+        return docExit;
+      case 'status':
+        return status;
+      case 'user':
+        return user;
+      case 'ar_id':
+        return arId;
+      default:
+        throw ArgumentError('Invalid property key');
+    }
+  }
 }

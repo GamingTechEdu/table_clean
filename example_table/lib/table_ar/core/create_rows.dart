@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../foundations/foundations.dart';
+import 'package:responsive_table_example/table_item/main/factories/form/form.dart';
+import 'package:responsive_table_example/utils/headers/header_ar.dart';
+import '../../foundations/foundations.dart';
 
-import '../../../utils/utils.dart';
-import '../../presentation/presenters/presenters.dart';
-import '../atoms/atoms.dart';
+import '../../table_item/ui/organism/organism.dart';
+import '../presentation/presenters/presenters.dart';
+import '../ui/atoms/atoms.dart';
 
 class CreateRows extends StatefulWidget {
-  dynamic data;
-  CreateRows({
-    Key? key, this.data,
+  const CreateRows({
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -17,15 +18,11 @@ class CreateRows extends StatefulWidget {
 }
 
 class _CreateRowsState extends State<CreateRows> {
-  List<Widget> desktopList(GetxTablePresenter controller) {
+  List<Widget> desktopList(GetxArPresenter controller) {
     List<Widget> widgets = [];
 
     for (var index = 0; index < controller.source.length; index++) {
-       widget.data = controller.source[index];
-      if (widget.data["defect_found"] == null) {
-        widget.data["defect_found"] = "EM MANUTENÇÃO";
-      }
-      ;
+      final data = controller.source[index];
 
       widgets.add(
         Column(
@@ -33,13 +30,21 @@ class _CreateRowsState extends State<CreateRows> {
             const SizedBox(height: 10),
             Container(
               padding: EdgeInsets.all(controller.showSelect ? 0 : 11),
-              decoration: controller.selecteds.contains(widget.data)
+              decoration: controller.selecteds.contains(data)
                   ? Decorations.selectedDecoration
                   : Decorations.rowDecoration,
               child: InkWell(
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => InitTable(
+                              data: data["ar"],
+                              controller: makeGetxCreateSimucPresenter(),
+                            )),
+                  );
                   setState(() {
                     controller.expanded![index] = !controller.expanded![index];
                   });
@@ -53,19 +58,19 @@ class _CreateRowsState extends State<CreateRows> {
                         Row(
                           children: [
                             CheckboxWidget(
-                                value: controller.selecteds.contains(widget.data),
+                                value: controller.selecteds.contains(data),
                                 onChanged: (value) =>
-                                    controller.onSelect(value, widget.data)),
+                                    controller.onSelect(value, data)),
                           ],
                         ),
-                      ...headerItem
+                      ...headerAr
                           .where((header) => header.show == true)
                           .map(
                             (header) => Expanded(
                               flex: header.flex,
                               child: header.sourceBuilder != null
                                   ? header.sourceBuilder!(
-                                      widget.data[header.value], widget.data)
+                                      data[header.value], data)
                                   : header.comands
                                       ? Row(
                                           mainAxisAlignment:
@@ -76,10 +81,10 @@ class _CreateRowsState extends State<CreateRows> {
                                           ],
                                         )
                                       : Text(
-                                          "${widget.data[header.value]}",
+                                          "${data[header.value]}",
                                           textAlign: header.textAlign,
                                           style: controller.selecteds
-                                                  .contains(widget.data)
+                                                  .contains(data)
                                               ? TextDecoration.selectedTextStyle
                                               : TextDecoration.rowTextStyle,
                                         ),
@@ -91,8 +96,8 @@ class _CreateRowsState extends State<CreateRows> {
                 ),
               ),
             ),
-            if (controller.isExpandRows && controller.expanded![index])
-              ExpandedRowAtom()
+            // if (controller.isExpandRows && controller.expanded![index])
+            //   ExpandedRowAtom()
           ],
         ),
       );
@@ -103,9 +108,23 @@ class _CreateRowsState extends State<CreateRows> {
   @override
   Widget build(BuildContext context) {
     // final GetxTablePresenter controller = Get.put(GetxTablePresenter());
-    final controller = Provider.of<GetxTablePresenter>(context);
+    final controller = Provider.of<GetxArPresenter>(context);
     return ListView(
       children: desktopList(controller),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second Page'),
+      ),
+      body: Center(
+        child: Text('Welcome to the Second Page!'),
+      ),
     );
   }
 }

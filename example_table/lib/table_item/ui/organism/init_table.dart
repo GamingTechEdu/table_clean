@@ -6,6 +6,7 @@ import '../../../foundations/foundations.dart';
 import '../../../utils/utils.dart';
 import '../../presentation/presenters/presenters.dart';
 import '../atoms/progress_indicator.dart';
+import '../core/core.dart';
 import '../molecules/molecules.dart';
 
 class InitTable extends StatefulWidget {
@@ -44,25 +45,18 @@ class _InitTableState extends State<InitTable> {
                 child: ListenableProvider(
                   create: (_) => widget.controller,
                   child: ResponsiveDatatable(
+                    headers: HeaderItem(),
                     title: DashboardMolecule(),
                     rowAction: RowAction(),
                     widgetLoad: CustomLinearProgressIndicator(),
-                    rows: CreateRows(
-                      data: widget.data,
-                    ),
+                    rows: CreateRows(),
                     footers: FooterMolecule(),
                     reponseScreenSizes: [ScreenSize.xs],
-                    headers: headerItem,
                     autoHeight: false,
                     isLoading: widget.controller.isLoading,
                     heightActionHeader: 15,
-                    sortColumn: widget.controller.sortColumn,
-                    sortAscending: widget.controller.sortAscending,
-                    onSort: (value) => widget.controller.onSort(value),
                     onSelectAll: (value) =>
                         widget.controller.onSelectAll(value),
-                    headerDecoration: Decorations.headerDecoration,
-                    headerTextStyle: TextDecoration.headerTextStyle,
                   ),
                 ))
           ],

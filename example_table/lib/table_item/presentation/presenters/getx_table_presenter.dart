@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:get/get.dart';
 
+import '../../../domain/entities/entities.dart';
 import '../../../domain/usecases/usecase.dart';
 
 class GetxTablePresenter extends GetxController {
@@ -22,10 +23,10 @@ class GetxTablePresenter extends GetxController {
   bool isExpandRows = true;
   String selectableKey = "id";
   List<int> perPages = [10, 20, 50, 100];
-  List<Map<String, dynamic>> source = [];
-  List<Map<String, dynamic>> selecteds = [];
-  List<Map<String, dynamic>> sourceOriginal = [];
-  List<Map<String, dynamic>> sourceFiltered = [];
+  List<SimucEntity> source = [];
+  List<SimucEntity> selecteds = [];
+  List<SimucEntity> sourceOriginal = [];
+  List<SimucEntity> sourceFiltered = [];
   bool isSearch = false;
 
   initializeData() async {
@@ -34,7 +35,7 @@ class GetxTablePresenter extends GetxController {
     update();
   }
 
-  Future<List<Map<String, dynamic>>> fetch() async {
+  Future<List<SimucEntity>> fetch() async {
     final source = await load.loadSimuc();
     return source;
   }
@@ -103,7 +104,7 @@ class GetxTablePresenter extends GetxController {
         sourceFiltered = sourceOriginal;
       } else {
         sourceFiltered = sourceOriginal
-            .where((data) => data[searchKey!]
+            .where((data) => data.numberSerie
                 .toString()
                 .toLowerCase()
                 .contains(value.toString().toLowerCase()))
@@ -127,11 +128,11 @@ class GetxTablePresenter extends GetxController {
     sortColumn = value;
     sortAscending = !sortAscending;
     if (sortAscending) {
-      sourceFiltered
-          .sort((a, b) => b["${sortColumn}"].compareTo(a["${sortColumn}"]));
+      sourceFiltered.sort((a, b) =>
+          b.getProperty(sortColumn!).compareTo(a.getProperty(sortColumn!)));
     } else {
-      sourceFiltered
-          .sort((a, b) => a["${sortColumn}"].compareTo(b["${sortColumn}"]));
+      sourceFiltered.sort((a, b) =>
+          a.getProperty(sortColumn!).compareTo(b.getProperty(sortColumn!)));
     }
     var rangeTop = currentPerPage! < sourceFiltered.length
         ? currentPerPage!

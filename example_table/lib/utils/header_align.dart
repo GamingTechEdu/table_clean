@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Utilities {
+class HeaderAlign {
   static Alignment headerAlignSwitch(TextAlign? textAlign) {
     switch (textAlign) {
       case TextAlign.center:

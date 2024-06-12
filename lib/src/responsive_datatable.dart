@@ -1,18 +1,14 @@
 import 'package:adaptivex/adaptivex.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_table/src/datatable_header.dart';
-import 'decorations/default_decoration.dart';
 import 'tools/checkbox_style.dart';
-import 'tools/utils.dart';
-
-typedef void ItemSelectedCallback();
 
 class ResponsiveDatatable extends StatefulWidget {
   // final ItemSelectedCallback onItemSelect;
+  final Widget headers;
   final Widget widgetLoad;
   final Widget? rows;
   final bool showSelect;
-  final List<DatatableHeader> headers;
   final double? heightActionHeader;
   final List<Map<String, dynamic>>? selecteds;
   final Widget? title;
@@ -20,9 +16,6 @@ class ResponsiveDatatable extends StatefulWidget {
   final Widget? footers;
   final Function(bool? value)? onSelectAll;
   final Function(bool? value, Map<String, dynamic> data)? onSelect;
-  final Function(dynamic value)? onSort;
-  final String? sortColumn;
-  final bool? sortAscending;
   final bool isLoading;
   final bool autoHeight;
   final bool hideUnderline;
@@ -37,13 +30,9 @@ class ResponsiveDatatable extends StatefulWidget {
 
   final List<ScreenSize> reponseScreenSizes;
 
-  final BoxDecoration? headerDecoration;
-
   final BoxDecoration? rowDecoration;
 
   final BoxDecoration? selectedDecoration;
-
-  final TextStyle? headerTextStyle;
 
   final TextStyle? rowTextStyle;
 
@@ -57,14 +46,10 @@ class ResponsiveDatatable extends StatefulWidget {
     this.onSelectAll,
     this.onSelect,
     // this.onTabRow,
-    this.onSort,
-    this.headers = const [],
     this.selecteds,
     this.title,
     this.rowAction,
     this.footers,
-    this.sortColumn,
-    this.sortAscending,
     this.isLoading = false,
     this.autoHeight = true,
     this.hideUnderline = true,
@@ -79,16 +64,15 @@ class ResponsiveDatatable extends StatefulWidget {
       ScreenSize.sm,
       ScreenSize.md
     ],
-    this.headerDecoration,
     this.rowDecoration,
     this.selectedDecoration,
-    this.headerTextStyle,
     this.rowTextStyle,
     this.selectedTextStyle,
     this.heightActionHeader,
     this.checkboxStyle,
     this.rows,
     required this.widgetLoad,
+    required this.headers,
     // required this.onItemSelect,
   }) : super(key: key);
 
@@ -97,56 +81,56 @@ class ResponsiveDatatable extends StatefulWidget {
 }
 
 class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
-  Widget desktopHeader() {
-    final _headerDecoration = widget.headerDecoration ?? defaultDesktopHeader;
-    return Container(
-      decoration: _headerDecoration,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-            Container(width: 30),
-          ...widget.headers
-              .where((header) => header.show == true)
-              .map(
-                (header) => Expanded(
-                    flex: header.flex,
-                    child: InkWell(
-                      onTap: () {
-                        if (widget.onSort != null && header.sortable) {
-                          widget.onSort!(header.value);
-                        }
-                      },
-                      child: header.headerBuilder != null
-                          ? header.headerBuilder!(header.value)
-                          : Container(
-                              padding: const EdgeInsets.all(11),
-                              alignment:
-                                  Utilities.headerAlignSwitch(header.textAlign),
-                              child: Wrap(
-                                crossAxisAlignment: WrapCrossAlignment.center,
-                                children: [
-                                  Text(
-                                    header.text,
-                                    textAlign: header.textAlign,
-                                    style: widget.headerTextStyle,
-                                  ),
-                                  if (widget.sortColumn != null &&
-                                      widget.sortColumn == header.value)
-                                    widget.sortAscending!
-                                        ? const Icon(Icons.arrow_downward,
-                                            size: 15)
-                                        : const Icon(Icons.arrow_upward,
-                                            size: 15)
-                                ],
-                              ),
-                            ),
-                    )),
-              )
-              .toList()
-        ],
-      ),
-    );
-  }
+  // Widget desktopHeader() {
+  //   final _headerDecoration = widget.headerDecoration ?? defaultDesktopHeader;
+  //   return Container(
+  //     decoration: _headerDecoration,
+  //     child: Row(
+  //       mainAxisSize: MainAxisSize.min,
+  //       children: [
+  //           Container(width: 30),
+  //         ...widget.headers
+  //             .where((header) => header.show == true)
+  //             .map(
+  //               (header) => Expanded(
+  //                   flex: header.flex,
+  //                   child: InkWell(
+  //                     onTap: () {
+  //                       if (widget.onSort != null && header.sortable) {
+  //                         widget.onSort!(header.value);
+  //                       }
+  //                     },
+  //                     child: header.headerBuilder != null
+  //                         ? header.headerBuilder!(header.value)
+  //                         : Container(
+  //                             padding: const EdgeInsets.all(11),
+  //                             alignment:
+  //                                 Utilities.headerAlignSwitch(header.textAlign),
+  //                             child: Wrap(
+  //                               crossAxisAlignment: WrapCrossAlignment.center,
+  //                               children: [
+  //                                 Text(
+  //                                   header.text,
+  //                                   textAlign: header.textAlign,
+  //                                   style: widget.headerTextStyle,
+  //                                 ),
+  //                                 if (widget.sortColumn != null &&
+  //                                     widget.sortColumn == header.value)
+  //                                   widget.sortAscending!
+  //                                       ? const Icon(Icons.arrow_downward,
+  //                                           size: 15)
+  //                                       : const Icon(Icons.arrow_upward,
+  //                                           size: 15)
+  //                               ],
+  //                             ),
+  //                           ),
+  //                   )),
+  //             )
+  //             .toList()
+  //       ],
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -156,11 +140,11 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
           if (widget.title != null) widget.title!,
         if (widget.rowAction != null) widget.rowAction!,
         SizedBox(height: widget.heightActionHeader),
-        if (widget.headers.isNotEmpty) desktopHeader(),
+         widget.headers,
         if (widget.isLoading) widget.widgetLoad,
         if (widget.autoHeight) widget.rows!,
         if (!widget.autoHeight) Expanded(child: widget.rows!),
-        if (widget.footers != null &&  widget.rows != null) widget.footers!
+        if (widget.footers != null && widget.rows != null) widget.footers!
       ],
     );
   }
