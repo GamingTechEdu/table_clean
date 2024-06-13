@@ -37,17 +37,16 @@ class _CreateRowsState extends State<CreateRows> {
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => InitTable(
-                              data: data.ar,
-                              controller: makeGetxCreateSimucPresenter(),
-                            )),
-                  );
-                  setState(() {
-                    controller.expanded![index] = !controller.expanded![index];
-                  });
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => InitTable(
+                  //             data: data.ar,
+                  //             controller: makeGetxCreateSimucPresenter(),
+                  //           )),
+                  // );
+                  Navigator.of(context)
+                    .pushNamed('/tableItens');
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(top: 4, bottom: 4),

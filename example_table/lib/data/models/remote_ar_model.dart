@@ -1,4 +1,5 @@
 import '../../domain/entities/entities.dart';
+import 'package:intl/intl.dart';
 
 class RemoteArModel {
   final String ar;
@@ -41,7 +42,19 @@ class RemoteArModel {
         docEntrance: docEntrance,
         position: position,
         quantityItens: quantityItens,
-        dateOpen: dateOpen,
+        dateOpen: formatDate(dateOpen),
         user: user,
       );
+
+  String formatDate(String inputDate) {
+    try {
+      final inputFormat = DateFormat('yyyy-MM-dd HH:mm');
+      final outputFormat = DateFormat('dd-MM-yyyy HH:mm');
+      final date = inputFormat.parse(inputDate);
+      return outputFormat.format(date);
+    } catch (e) {
+      print('Erro ao formatar a data: $e');
+      return '';
+    }
+  }
 }

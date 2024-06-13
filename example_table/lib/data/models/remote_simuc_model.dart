@@ -1,4 +1,5 @@
 import '../../domain/entities/entities.dart';
+import 'package:intl/intl.dart';
 
 class RemoteSimucModel {
   final String numberSerie;
@@ -42,7 +43,7 @@ class RemoteSimucModel {
   SimucEntity toEntity() => SimucEntity(
         numberSerie: numberSerie,
         item: item,
-        dateRegister: dateRegister,
+        dateRegister: formatDate(dateRegister),
         defectRelated: defectRelated,
         inspEntrance: inspEntrance,
         defectFound: defectFound,
@@ -51,4 +52,16 @@ class RemoteSimucModel {
         user: user,
         arId: arId,
       );
+
+  String formatDate(String inputDate) {
+    try {
+      final inputFormat = DateFormat('yyyy-MM-dd HH:mm');
+      final outputFormat = DateFormat('dd-MM-yyyy HH:mm');
+      final date = inputFormat.parse(inputDate);
+      return outputFormat.format(date);
+    } catch (e) {
+      print('Erro ao formatar a data: $e');
+      return '';
+    }
+  }
 }

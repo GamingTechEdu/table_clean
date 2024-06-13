@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_table_example/table_item/main/factories/form/form.dart';
+import 'package:responsive_table_example/table_item/ui/organism/init_table.dart';
 
 import '../ui/organism/organism.dart';
 import 'factories/form/form.dart';
@@ -19,9 +21,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/',
+      initialRoute: '/tableAr',
       routes: {
-        '/': (_) => InitTableAr(controller: makeGetxCreateArPresenter()),
+        '/tableAr': (_) => InitTableAr(controller: makeGetxCreateArPresenter()),
+        '/tableItens': (_) => InitTable(controller: makeGetxCreateSimucPresenter())
       },
     );
   }

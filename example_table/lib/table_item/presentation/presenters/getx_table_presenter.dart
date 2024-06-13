@@ -39,31 +39,31 @@ class GetxTablePresenter extends GetxController {
     return source;
   }
 
-  List<Map<String, dynamic>> generateData({int n = 100}) {
-    final List source = List.filled(n, Random.secure());
-    List<Map<String, dynamic>> temps = [];
-    var i = 1;
-    print(i);
-    // ignore: unused_local_variable
-    for (var data in source) {
-      temps.add({
-        "id": i,
-        "sku": "$i\000$i",
-        "name": "Product $i",
-        "category": "Category-$i",
-        "price": i * 10.00,
-        "cost": "20.00",
-        "margin": "${i}0.20",
-        "in_stock": "${i}0",
-        "alert": "5",
-        "received": [i + 20, 150],
-        // "comand":
-      });
-      i++;
-    }
-    update();
-    return temps;
-  }
+  // List<Map<String, dynamic>> generateData({int n = 100}) {
+  //   final List source = List.filled(n, Random.secure());
+  //   List<Map<String, dynamic>> temps = [];
+  //   var i = 1;
+  //   print(i);
+  //   // ignore: unused_local_variable
+  //   for (var data in source) {
+  //     temps.add({
+  //       "id": i,
+  //       "sku": "$i\000$i",
+  //       "name": "Product $i",
+  //       "category": "Category-$i",
+  //       "price": i * 10.00,
+  //       "cost": "20.00",
+  //       "margin": "${i}0.20",
+  //       "in_stock": "${i}0",
+  //       "alert": "5",
+  //       "received": [i + 20, 150],
+  //       // "comand":
+  //     });
+  //     i++;
+  //   }
+  //   update();
+  //   return temps;
+  // }
 
   mockPullData() async {
     expanded = List.generate(currentPerPage!, (index) => false);
@@ -103,7 +103,7 @@ class GetxTablePresenter extends GetxController {
         sourceFiltered = sourceOriginal;
       } else {
         sourceFiltered = sourceOriginal
-            .where((data) => data.numberSerie
+            .where((data) => data
                 .toString()
                 .toLowerCase()
                 .contains(value.toString().toLowerCase()))

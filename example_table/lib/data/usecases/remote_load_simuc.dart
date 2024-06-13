@@ -19,6 +19,7 @@ class RemoteLoadSimuc implements LoadSimuc {
       final httpResponse = await httpClient.request(url: url, method: 'get');
       return httpResponse.map<SimucEntity>((json) {
         final simucEntity = RemoteSimucModel.fromJson(json).toEntity();
+        print(simucEntity);
         return simucEntity;
       }).toList();
     } on HttpError catch (error) {
@@ -28,3 +29,27 @@ class RemoteLoadSimuc implements LoadSimuc {
     }
   }
 }
+
+
+// class RemoteLoadSimuc implements LoadSimuc {
+//   @override
+//   Future<List<SimucEntity>> loadSimuc() async{
+//     try {
+//         final jsonString = await rootBundle.loadString('assets/simucs.json');
+//          final List<dynamic> jsonResponse = json.decode(jsonString);
+//          return jsonResponse.map<SimucEntity>((json){
+//           final teste = RemoteSimucModel.fromJson(json).toEntity();
+//           return teste;
+//          }).toList();
+//     } on HttpError catch (error) {
+//       throw error == HttpError.forbidden
+//           ? DomainError.accessDenied
+//           : DomainError.unexpected;
+//     }
+//   }
+// }
+
+// void main() async{
+//   var teste = RemoteLoadSimuc();
+//   await teste.loadSimuc();
+// }

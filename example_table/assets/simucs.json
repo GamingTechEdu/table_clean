@@ -1,0 +1,98 @@
+[
+    {
+        "number_serie": "2222000001",
+        "item": "SIMUC",
+        "date_register": "11/09/1998",
+        "defect_related": "SURTO DE ENERGIA",
+        "insp_entrance": "PEÇA INTEIRA SEM DEFEITO APARENTE",
+        "defect_found": "NULL",
+        "doc_exit": "NULL",
+        "status": "1",
+        "user": "Evellyn Elayne",
+        "ar_id": "1"
+    },
+    {
+        "number_serie": "2222000002",
+        "item": "SIMUC",
+        "date_register": "11/09/1998",
+        "defect_related": "LUX ALTO",
+        "insp_entrance": "PEÇA CARNBONIZADA",
+        "defect_found": "NULL",
+        "doc_exit": "NULL",
+        "status": "2",
+        "user": "LAÍS",
+        "ar_id": "2"
+    },
+    {
+        "number_serie": "2222000003",
+        "item": "SIMUC",
+        "date_register": "11/09/1998",
+        "defect_related": "ERRO DE RÁDIO",
+        "insp_entrance": "APRESENTA COPO AVARIADO",
+        "defect_found": "NULL",
+        "doc_exit": "NULL",
+        "status": "3",
+        "user": "LAÍS",
+        "ar_id": "3"
+    },
+    {
+        "number_serie": "2222000004",
+        "item": "SIMUC",
+        "date_register": "11/09/1998",
+        "defect_related": "ERRO DE RÁDIO",
+        "insp_entrance": "APRESENTA COPO AVARIADO",
+        "defect_found": "NULL",
+        "doc_exit": "NULL",
+        "status": "3",
+        "user": "LAÍS",
+        "ar_id": "3"
+    },
+    {
+        "number_serie": "2222000004",
+        "item": "SIMUC",
+        "date_register": "11/09/1998",
+        "defect_related": "ERRO DE RÁDIO",
+        "insp_entrance": "APRESENTA COPO AVARIADO",
+        "defect_found": "NULL",
+        "doc_exit": "NULL",
+        "status": "3",
+        "user": "LAÍS",
+        "ar_id": "77"
+    },
+    {
+        "number_serie": "2222000004",
+        "item": "SIMUC",
+        "date_register": "11/09/1998",
+        "defect_related": "ERRO DE RÁDIO",
+        "insp_entrance": "APRESENTA COPO AVARIADO",
+        "defect_found": "NULL",
+        "doc_exit": "NULL",
+        "status": "3",
+        "user": "LAÍS",
+        "ar_id": "77"
+    },
+    {
+        "number_serie": "2222000004",
+        "item": "SIMUC",
+        "date_register": "11/09/1998",
+        "defect_related": "ERRO DE RÁDIO",
+        "insp_entrance": "APRESENTA COPO AVARIADO",
+        "defect_found": "NULL",
+        "doc_exit": "NULL",
+        "status": "3",
+        "user": "LAÍS",
+        "ar_id": "77"
+    },
+    {
+        "number_serie": "2222000004",
+        "item": "SIMUC",
+        "date_register": "11/09/1998",
+        "defect_related": "ERRO DE RÁDIO",
+        "insp_entrance": "APRESENTA COPO AVARIADO",
+        "defect_found": "NULL",
+        "doc_exit": "NULL",
+        "status": "3",
+        "user": "LAÍS",
+        "ar_id": "3"
+    }
+]
