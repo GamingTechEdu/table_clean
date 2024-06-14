@@ -16,13 +16,13 @@ class DashboardMolecule extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           DashboardAtom(
-            label: "Total: ${controller.total.toString()}",
+            label: "Manutenção: ${controller.status0.length.toString()}",
           ),
           DashboardAtom(
-            label: "Teste",
+            label: "Aguard. Nota: ${controller.status2.length.toString()}",
           ),
           DashboardAtom(
-            label: "Teste",
+            label: "Concluídas: ${controller.status1.length.toString()}",
           ),
         ],
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_table/export.dart';
 
+import '../../table_item/ui/atoms/doc_exit.dart';
+
 List<DatatableHeaderItem> headerItem = [
   DatatableHeaderItem(
     text: "NUMERO DE SERIE",
@@ -46,22 +48,13 @@ List<DatatableHeaderItem> headerItem = [
     textAlign: TextAlign.center,
   ),
   DatatableHeaderItem(
-      text: "NOTA FISCAL",
-      value: "doc_exit",
-      show: true,
-      sortable: true,
-      textAlign: TextAlign.center,
-      sourceBuilder: (value, row) {
-        switch (value) {
-          case "1":
-            return Text(value);
-          default:
-            return Text(
-              "AGUARDANDO NOTA",
-              style: TextStyle(color: Colors.red),
-            );
-        }
-      }),
+    text: "NOTA FISCAL",
+    value: "doc_exit",
+    show: true,
+    sortable: true,
+    textAlign: TextAlign.center,
+    sourceBuilder: (value, row) => DocExit(value: value),
+  ),
   DatatableHeaderItem(
       text: "STATUS",
       value: "status",
@@ -91,7 +84,7 @@ List<DatatableHeaderItem> headerItem = [
             );
           case "2":
             return Tooltip(
-              message: "Concluido",
+              message: "Aguardando Nota",
               child: Container(
                 width: 10,
                 height: 10,
@@ -100,17 +93,17 @@ List<DatatableHeaderItem> headerItem = [
                     BoxShadow(
                       spreadRadius: 2,
                       blurRadius: 3,
-                      color: Colors.yellow,
+                      color: Colors.purple,
                     )
                   ],
                   shape: BoxShape.circle,
-                  color: Colors.yellow,
+                  color: Colors.purple,
                 ),
               ),
             );
           case "0":
             return Tooltip(
-              message: "Cadastrado",
+              message: "Em Manutenção",
               child: Container(
                 width: 10,
                 height: 10,
@@ -136,22 +129,6 @@ List<DatatableHeaderItem> headerItem = [
     value: "user",
     show: true,
     sortable: false,
-    // sourceBuilder: (value, row) {
-    //   List list = List.from(value);
-    //   return Container(
-    //     child: Column(
-    //       children: [
-    //         Container(
-    //           width: 85,
-    //           child: LinearProgressIndicator(
-    //             value: list.first / list.last,
-    //           ),
-    //         ),
-    //         Text("${list.first} of ${list.last}")
-    //       ],
-    //     ),
-    //   );
-    // },
     textAlign: TextAlign.center,
   ),
   DatatableHeaderItem(

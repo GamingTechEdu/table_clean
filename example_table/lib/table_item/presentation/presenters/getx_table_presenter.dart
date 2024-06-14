@@ -29,13 +29,31 @@ class GetxTablePresenter extends GetxController {
   List<SimucEntity> sourceFiltered = [];
   bool isSearch = false;
 
+  List<SimucEntity> status0 = [];
+  List<SimucEntity> status2 = [];
+  List<SimucEntity> status1 = [];
+
+
   initializeData() async {
     mockPullData();
     update();
   }
 
+  void separetStatus(List<SimucEntity> source) {
+    for (var rows in source) {
+      if (rows.status == "0") {
+        status0.add(rows);
+      }else if(rows.status == "2"){
+        status2.add(rows); 
+      }else{
+        status1.add(rows);
+      }
+    }
+  }
+
   Future<List<SimucEntity>> fetch() async {
     final source = await load.loadSimuc();
+    separetStatus(source);
     return source;
   }
 
@@ -185,4 +203,5 @@ class GetxTablePresenter extends GetxController {
     }
     update();
   }
+
 }

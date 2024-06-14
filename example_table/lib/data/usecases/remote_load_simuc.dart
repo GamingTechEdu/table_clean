@@ -19,7 +19,6 @@ class RemoteLoadSimuc implements LoadSimuc {
       final httpResponse = await httpClient.request(url: url, method: 'get');
       return httpResponse.map<SimucEntity>((json) {
         final simucEntity = RemoteSimucModel.fromJson(json).toEntity();
-        print(simucEntity);
         return simucEntity;
       }).toList();
     } on HttpError catch (error) {

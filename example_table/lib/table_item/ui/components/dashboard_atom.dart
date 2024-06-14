@@ -8,7 +8,7 @@ class DashboardAtom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Text(label,  style: TextStyle(fontSize: 40)),
+      child: Text(label,  style: TextStyle(fontSize: 30)),
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           color: Color(0xFFD9D9D9)),
