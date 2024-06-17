@@ -18,8 +18,15 @@ class _InitTableItemState extends State<InitTableItem> {
   @override
   void initState() {
     super.initState();
-    widget.controller.initializeData();
+     widget.controller.initializeData();
   }
+
+  // @override
+  // void didChangeDependencies() {
+  //   super.didChangeDependencies();
+  //   final String id = ModalRoute.of(context)!.settings.arguments as String;
+  //   widget.controller.initializeData(id);
+  // }
 
   @override
   Widget build(BuildContext context) {

@@ -10,7 +10,7 @@ class RemoteLoadSimuc implements LoadSimuc {
 
   RemoteLoadSimuc({
     required this.url,
-    required this.httpClient,
+    required this.httpClient,s
   });
 
   @override

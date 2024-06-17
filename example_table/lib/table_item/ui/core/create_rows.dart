@@ -20,8 +20,12 @@ class _CreateRowsState extends State<CreateRows> {
     final dadosRelacionados =
         controller.source.where((item) => item.arId == widget.id).toList();
 
+    
+
     for (var index = 0; index < dadosRelacionados.length; index++) {
-       var data = dadosRelacionados[index];
+      var data = dadosRelacionados[index];
+
+      
 
       widgets.add(
         Column(

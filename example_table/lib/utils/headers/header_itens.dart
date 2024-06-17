@@ -132,6 +132,13 @@ List<DatatableHeaderItem> headerItem = [
     textAlign: TextAlign.center,
   ),
   DatatableHeaderItem(
+    text: "AR",
+    value: "ar_id",
+    show: true,
+    sortable: false,
+    textAlign: TextAlign.center,
+  ),
+  DatatableHeaderItem(
     text: "COMANDOS",
     value: "comand",
     show: true,

@@ -33,7 +33,6 @@ class GetxTablePresenter extends GetxController {
   List<SimucEntity> status2 = [];
   List<SimucEntity> status1 = [];
 
-
   initializeData() async {
     mockPullData();
     update();
@@ -43,9 +42,9 @@ class GetxTablePresenter extends GetxController {
     for (var rows in source) {
       if (rows.status == "0") {
         status0.add(rows);
-      }else if(rows.status == "2"){
-        status2.add(rows); 
-      }else{
+      } else if (rows.status == "2") {
+        status2.add(rows);
+      } else {
         status1.add(rows);
       }
     }
@@ -53,35 +52,10 @@ class GetxTablePresenter extends GetxController {
 
   Future<List<SimucEntity>> fetch() async {
     final source = await load.loadSimuc();
-    separetStatus(source);
-    return source;
+    var teste = source.where((element) => element.arId == "1").toList();
+    separetStatus(source.where((element) => element.arId == "1").toList());
+    return teste;
   }
-
-  // List<Map<String, dynamic>> generateData({int n = 100}) {
-  //   final List source = List.filled(n, Random.secure());
-  //   List<Map<String, dynamic>> temps = [];
-  //   var i = 1;
-  //   print(i);
-  //   // ignore: unused_local_variable
-  //   for (var data in source) {
-  //     temps.add({
-  //       "id": i,
-  //       "sku": "$i\000$i",
-  //       "name": "Product $i",
-  //       "category": "Category-$i",
-  //       "price": i * 10.00,
-  //       "cost": "20.00",
-  //       "margin": "${i}0.20",
-  //       "in_stock": "${i}0",
-  //       "alert": "5",
-  //       "received": [i + 20, 150],
-  //       // "comand":
-  //     });
-  //     i++;
-  //   }
-  //   update();
-  //   return temps;
-  // }
 
   mockPullData() async {
     expanded = List.generate(currentPerPage!, (index) => false);
@@ -203,5 +177,4 @@ class GetxTablePresenter extends GetxController {
     }
     update();
   }
-
 }

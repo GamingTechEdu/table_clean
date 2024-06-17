@@ -4,12 +4,19 @@ import 'package:provider/provider.dart';
 import '../../presentation/presenters/presenters.dart';
 import '../atoms/atoms.dart';
 
-class DashboardMolecule extends StatelessWidget {
+class DashboardMolecule extends StatefulWidget {
   const DashboardMolecule({Key? key}) : super(key: key);
+
+  @override
+  State<DashboardMolecule> createState() => _DashboardMoleculeState();
+}
+
+class _DashboardMoleculeState extends State<DashboardMolecule> {
 
   @override
   Widget build(BuildContext context) {
     final controller = Provider.of<GetxTablePresenter>(context);
+
     return Row(
       children: [
         DashboardAtom(
@@ -23,7 +30,7 @@ class DashboardMolecule extends StatelessWidget {
           color: Colors.purple.withOpacity(0.3),
           colorInternal: Colors.purple.withOpacity(0.5),
         ),
-         SizedBox(width: 10),
+        SizedBox(width: 10),
         DashboardAtom(
           label: "Concluídas: ${controller.status1.length.toString()}",
           color: Colors.green.withOpacity(0.3),

@@ -36,7 +36,7 @@ class SearchBarWidget extends StatelessWidget {
                 icon: Icon(Icons.cancel),
                 onPressed: () {
                   controller.isSearch = false;
-                  controller.initializeData();
+                  // controller.initializeData();
                 }),
             suffixIcon: IconButton(icon: Icon(Icons.search), onPressed: () {})),
         onSubmitted: (value) {
