@@ -17,7 +17,7 @@ class GetxTablePresenter extends GetxController {
   bool isLoading = true;
   bool showSelect = true;
   String? searchKey = "id";
-  int? currentPerPage = 20;
+  int? currentPerPage = 50;
   var random = new Random();
   bool sortAscending = true;
   bool isExpandRows = true;

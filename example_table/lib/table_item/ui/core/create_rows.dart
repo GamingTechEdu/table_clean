@@ -7,7 +7,8 @@ import '../../presentation/presenters/presenters.dart';
 import '../atoms/atoms.dart';
 
 class CreateRows extends StatefulWidget {
-  CreateRows({Key? key}) : super(key: key);
+  final String id;
+  CreateRows({Key? key, required this.id}) : super(key: key);
 
   @override
   State<CreateRows> createState() => _CreateRowsState();
@@ -16,9 +17,11 @@ class CreateRows extends StatefulWidget {
 class _CreateRowsState extends State<CreateRows> {
   List<Widget> desktopList(GetxTablePresenter controller) {
     List<Widget> widgets = [];
+    final dadosRelacionados =
+        controller.source.where((item) => item.arId == widget.id).toList();
 
-    for (var index = 0; index < controller.source.length; index++) {
-      var data = controller.source[index];
+    for (var index = 0; index < dadosRelacionados.length; index++) {
+       var data = dadosRelacionados[index];
 
       widgets.add(
         Column(

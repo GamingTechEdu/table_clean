@@ -9,8 +9,7 @@ import '../molecules/molecules.dart';
 
 class InitTableItem extends StatefulWidget {
   final GetxTablePresenter controller;
-  final dynamic data;
-  InitTableItem({Key? key, required this.controller, this.data}) : super(key: key);
+  InitTableItem({Key? key, required this.controller}) : super(key: key);
   @override
   _InitTableItemState createState() => _InitTableItemState();
 }
@@ -24,6 +23,7 @@ class _InitTableItemState extends State<InitTableItem> {
 
   @override
   Widget build(BuildContext context) {
+    final String id = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 30,
@@ -46,7 +46,7 @@ class _InitTableItemState extends State<InitTableItem> {
                     headers: HeaderItem(),
                     rowAction: RowAction(),
                     widgetLoad: CustomLinearProgressIndicator(),
-                    rows: CreateRows(),
+                    rows: CreateRows(id: id),
                     footers: FooterMolecule(),
                     reponseScreenSizes: [ScreenSize.xs],
                     autoHeight: false,
