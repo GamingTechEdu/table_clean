@@ -7,15 +7,15 @@ import '../atoms/progress_indicator.dart';
 import '../core/core.dart';
 import '../molecules/molecules.dart';
 
-class InitTable extends StatefulWidget {
+class InitTableItem extends StatefulWidget {
   final GetxTablePresenter controller;
   final dynamic data;
-  InitTable({Key? key, required this.controller, this.data}) : super(key: key);
+  InitTableItem({Key? key, required this.controller, this.data}) : super(key: key);
   @override
-  _InitTableState createState() => _InitTableState();
+  _InitTableItemState createState() => _InitTableItemState();
 }
 
-class _InitTableState extends State<InitTable> {
+class _InitTableItemState extends State<InitTableItem> {
   @override
   void initState() {
     super.initState();
@@ -44,7 +44,6 @@ class _InitTableState extends State<InitTable> {
                   create: (_) => widget.controller,
                   child: ResponsiveDatatable(
                     headers: HeaderItem(),
-                    title: DashboardMolecule(),
                     rowAction: RowAction(),
                     widgetLoad: CustomLinearProgressIndicator(),
                     rows: CreateRows(),

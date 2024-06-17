@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/tableAr',
       routes: {
         '/tableAr': (_) => InitTableAr(controller: makeGetxCreateArPresenter()),
-        '/tableItens': (_) => InitTable(controller: makeGetxCreateSimucPresenter())
+        '/tableItens': (_) => InitTableItem(controller: makeGetxCreateSimucPresenter())
       },
     );
   }

@@ -7,10 +7,12 @@ class IconButtonFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButtonWidget(
-      onPressed: () {},
-      tooltip: "Relatório",
-      icon: Icon(Icons.assignment),
+    return Tooltip(
+      message: "Relatório",
+      child: InkWell(
+        onTap: () {},
+        child: Icon(Icons.add_task, size: 18,),
+      ),
     );
   }
 }

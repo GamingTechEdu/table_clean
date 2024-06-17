@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_table/export.dart';
 
-import '../../table_ar/ui/atoms/alter_data.dart';
-
 List<DatatableHeader> headerAr = [
+  DatatableHeader(
+    text: "AR",
+    value: "ar",
+    show: true,
+    sortable: true,
+    textAlign: TextAlign.center,
+  ),
   DatatableHeader(
     text: "CLIENTE",
     value: "client",

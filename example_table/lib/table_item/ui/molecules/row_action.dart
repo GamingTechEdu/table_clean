@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../../utils/spacers.dart';
 import '../../presentation/presenters/presenters.dart';
 import '../atoms/atoms.dart';
+import 'molecules.dart';
 
 class RowAction extends StatelessWidget {
   const RowAction({Key? key}) : super(key: key);
@@ -31,6 +32,7 @@ class RowAction extends StatelessWidget {
             Spacers.hV,
             SearchBarAtom(), //TODO: Faltando gerenciamento de estado
             SizedBox(width: 50),
+            DashboardMolecule(),
             // Container(
             //   width: 400,
             //   child: TabBar(
@@ -46,7 +48,7 @@ class RowAction extends StatelessWidget {
             //   ),
             // ),
             Spacer(),
-            IconButtonFilter(), //TODO: Faltando gerenciamento de estado
+            ExtractRelatory(), //TODO: Faltando gerenciamento de estado
           ],
         ),
       ),

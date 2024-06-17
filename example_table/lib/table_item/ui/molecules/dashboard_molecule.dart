@@ -10,22 +10,26 @@ class DashboardMolecule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Provider.of<GetxTablePresenter>(context);
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          DashboardAtom(
-            label: "Manutenção: ${controller.status0.length.toString()}",
-          ),
-          DashboardAtom(
-            label: "Aguard. Nota: ${controller.status2.length.toString()}",
-          ),
-          DashboardAtom(
-            label: "Concluídas: ${controller.status1.length.toString()}",
-          ),
-        ],
-      ),
+    return Row(
+      children: [
+        DashboardAtom(
+          label: "Manutenção: ${controller.status0.length.toString()}",
+          color: Colors.red.withOpacity(0.3),
+          colorInternal: Colors.red.withOpacity(0.5),
+        ),
+        SizedBox(width: 10),
+        DashboardAtom(
+          label: "Aguard. Nota: ${controller.status2.length.toString()}",
+          color: Colors.purple.withOpacity(0.3),
+          colorInternal: Colors.purple.withOpacity(0.5),
+        ),
+         SizedBox(width: 10),
+        DashboardAtom(
+          label: "Concluídas: ${controller.status1.length.toString()}",
+          color: Colors.green.withOpacity(0.3),
+          colorInternal: Colors.green.withOpacity(0.5),
+        ),
+      ],
     );
   }
 }
