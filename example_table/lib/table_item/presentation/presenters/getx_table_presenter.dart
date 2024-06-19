@@ -33,8 +33,8 @@ class GetxTablePresenter extends GetxController {
   List<SimucEntity> status2 = [];
   List<SimucEntity> status1 = [];
 
-  initializeData() async {
-    mockPullData();
+  initializeData(String id) async {
+    mockPullData(id);
     update();
   }
 
@@ -50,20 +50,20 @@ class GetxTablePresenter extends GetxController {
     }
   }
 
-  Future<List<SimucEntity>> fetch() async {
+  Future<List<SimucEntity>> fetch(String id) async {
     final source = await load.loadSimuc();
-    var teste = source.where((element) => element.arId == "1").toList();
-    separetStatus(source.where((element) => element.arId == "1").toList());
+    var teste = source.where((element) => element.arId == id).toList();
+    // separetStatus(source.where((element) => element.arId == id).toList());
     return teste;
   }
 
-  mockPullData() async {
+  mockPullData(String id) async {
     expanded = List.generate(currentPerPage!, (index) => false);
 
     isLoading = true;
     Future.delayed(Duration(seconds: 1)).then((value) async {
       sourceOriginal.clear();
-      sourceOriginal.addAll(await fetch());
+      sourceOriginal.addAll(await fetch(id));
       sourceFiltered = sourceOriginal;
       total = sourceFiltered.length;
       int endRange = total < currentPerPage! ? total : currentPerPage!;

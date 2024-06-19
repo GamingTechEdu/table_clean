@@ -82,7 +82,7 @@ class GetxArPresenter extends GetxController {
     update();
   }
 
-  resetData({start = 0}) async {
+  resetData({start = 0}){
     isLoading = true;
     var expandedLen =
         total - start < currentPerPage! ? total - start : currentPerPage;

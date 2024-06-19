@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_table_example/table_item/main/factories/form/form.dart';
 import 'package:responsive_table_example/utils/headers/header_ar.dart';
 import '../../foundations/foundations.dart';
 
-import '../../table_item/ui/organism/organism.dart';
 import '../presentation/presenters/presenters.dart';
 import '../ui/atoms/atoms.dart';
 

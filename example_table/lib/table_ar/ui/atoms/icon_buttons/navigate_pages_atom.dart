@@ -43,22 +43,3 @@ class _NavigatePagesAtomState extends State<NavigatePagesAtom> {
     );
   }
 }
-
-
-//  IconButton(
-//                 highlightColor: Colors.transparent,
-//                 icon: Icon(Icons.arrow_forward_ios, size: 16),
-//                 onPressed: _currentPage + _currentPerPage! - 1 > _total
-//                     ? null
-//                     : () {
-//                         var _nextSet = _currentPage + _currentPerPage!;
-
-//                         setState(() {
-//                           _currentPage = _nextSet < _total
-//                               ? _nextSet
-//                               : _total - _currentPerPage!;
-//                           _resetData(start: _nextSet - 1);
-//                         });
-//                       },
-//                 padding: EdgeInsets.symmetric(horizontal: 15),
-//               )

@@ -15,17 +15,15 @@ class CreateRows extends StatefulWidget {
 }
 
 class _CreateRowsState extends State<CreateRows> {
+
+
   List<Widget> desktopList(GetxTablePresenter controller) {
     List<Widget> widgets = [];
     final dadosRelacionados =
         controller.source.where((item) => item.arId == widget.id).toList();
 
-    
-
     for (var index = 0; index < dadosRelacionados.length; index++) {
       var data = dadosRelacionados[index];
-
-      
 
       widgets.add(
         Column(

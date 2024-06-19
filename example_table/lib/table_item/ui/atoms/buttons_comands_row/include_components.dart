@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../include_components_organism.dart/atoms/include_components_atom.dart';
+
 
 class IncludeComponents extends StatelessWidget {
   const IncludeComponents({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class IncludeComponents extends StatelessWidget {
                   height: 520,
                   child: Stack(
                     children: [
-                      // ResponsiveLayout(),
+                      ComponentesArea(),
                       Positioned(
                         top: 2,
                         right: 5,
