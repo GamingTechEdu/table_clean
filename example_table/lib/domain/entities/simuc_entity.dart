@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class SimucEntity extends Equatable {
+  final String id;
   final String numberSerie;
   final String item;
   final String dateRegister;
@@ -14,6 +15,7 @@ class SimucEntity extends Equatable {
 
   @override
   List get props => [
+        id,
         numberSerie,
         item,
         dateRegister,
@@ -27,6 +29,7 @@ class SimucEntity extends Equatable {
       ];
 
   const SimucEntity({
+    required this.id,
     required this.numberSerie,
     required this.item,
     required this.dateRegister,
@@ -41,6 +44,8 @@ class SimucEntity extends Equatable {
 
   dynamic getProperty(String key) {
     switch (key) {
+      case 'id':
+        return id;
       case 'number_serie':
         return numberSerie;
       case 'item':

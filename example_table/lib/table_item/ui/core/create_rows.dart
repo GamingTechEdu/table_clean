@@ -69,7 +69,7 @@ class _CreateRowsState extends State<CreateRows> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            IncludeComponents(),
+                                            IncludeComponents(id: data.id),
                                             IconButtonFilter(),
                                           ],
                                         )

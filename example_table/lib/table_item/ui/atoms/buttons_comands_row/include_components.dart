@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
-import '../../include_components_organism.dart/atoms/include_components_atom.dart';
-
+import 'package:table_componentes/export.dart';
 
 class IncludeComponents extends StatelessWidget {
-  const IncludeComponents({Key? key}) : super(key: key);
+  final String id;
+  const IncludeComponents({Key? key, required this.id}) : super(key: key);
 
   Future<void> showDialogCompo(context) async {
     return showDialog(
@@ -22,7 +21,7 @@ class IncludeComponents extends StatelessWidget {
                   height: 520,
                   child: Stack(
                     children: [
-                      ComponentesArea(),
+                      ComponenteInclude(id: id),
                       Positioned(
                         top: 2,
                         right: 5,

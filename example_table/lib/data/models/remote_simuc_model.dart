@@ -2,6 +2,7 @@ import '../../domain/entities/entities.dart';
 import 'package:intl/intl.dart';
 
 class RemoteSimucModel {
+  final String id;
   final String numberSerie;
   final String item;
   final String dateRegister;
@@ -14,6 +15,7 @@ class RemoteSimucModel {
   final String arId;
 
   const RemoteSimucModel({
+    required this.id,
     required this.numberSerie,
     required this.item,
     required this.dateRegister,
@@ -28,6 +30,7 @@ class RemoteSimucModel {
 
   factory RemoteSimucModel.fromJson(Map? json) {
     return RemoteSimucModel(
+        id: json?['id'] ?? '',
         numberSerie: json?['number_serie'] ?? '',
         item: json?['item'] ?? '',
         dateRegister: json?['date_register'] ?? '',
@@ -41,6 +44,7 @@ class RemoteSimucModel {
   }
 
   SimucEntity toEntity() => SimucEntity(
+        id: id,
         numberSerie: numberSerie,
         item: item,
         dateRegister: formatDate(dateRegister),
