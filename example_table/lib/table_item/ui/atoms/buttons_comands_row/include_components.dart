@@ -15,25 +15,31 @@ class IncludeComponents extends StatelessWidget {
             backgroundColor: Colors.transparent,
             body: Center(
               child: AlertDialog(
-                insetPadding: EdgeInsets.all(20),
-                content: Container(
-                  width: 1000,
-                  height: 520,
-                  child: Stack(
-                    children: [
-                      ComponenteInclude(id: id),
-                      Positioned(
-                        top: 2,
-                        right: 5,
-                        child: IconButton(
-                          icon: Icon(Icons.close),
-                          color: Colors.red,
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                ),
+                contentPadding: EdgeInsets.all(0),
+                content: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  child: Container(
+                    width: 1000,
+                    height: 540,
+                    child: Stack(
+                      children: [
+                        ComponenteInclude(id: id),
+                        Positioned(
+                          top: 2,
+                          right: 5,
+                          child: IconButton(
+                            icon: Icon(Icons.close),
+                            color: Colors.red,
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -43,7 +49,6 @@ class IncludeComponents extends StatelessWidget {
       },
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
