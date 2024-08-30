@@ -9,8 +9,8 @@ class DatatableHeaderItem {
   final TextAlign textAlign;
   final int flex;
   final Widget Function(dynamic value)? headerBuilder;
-  final Widget Function(dynamic value, dynamic row)?
-      sourceBuilder;
+  final Widget Function(dynamic value, dynamic row)? sourceBuilder;
+  final double fontSize;
 
   DatatableHeaderItem({
     required this.text,
@@ -22,9 +22,11 @@ class DatatableHeaderItem {
     this.flex = 1,
     this.headerBuilder,
     this.sourceBuilder,
+    this.fontSize = 12,
   });
 
-  factory DatatableHeaderItem.fromMap(Map<String, dynamic> map) => DatatableHeaderItem(
+  factory DatatableHeaderItem.fromMap(Map<String, dynamic> map) =>
+      DatatableHeaderItem(
         text: map['text'],
         value: map['value'],
         sortable: map['sortable'],
@@ -33,6 +35,7 @@ class DatatableHeaderItem {
         flex: map['flex'],
         headerBuilder: map['headerBuilder'],
         sourceBuilder: map['sourceBuilder'],
+        fontSize: map['fontSize'],
       );
 
   Map<String, dynamic> toMap() => {
@@ -44,5 +47,6 @@ class DatatableHeaderItem {
         "flex": this.flex,
         "headerBuilder": this.headerBuilder,
         "sourceBuilder": this.sourceBuilder,
+        "fontSize": this.fontSize,
       };
 }

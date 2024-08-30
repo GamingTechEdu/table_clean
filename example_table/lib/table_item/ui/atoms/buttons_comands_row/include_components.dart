@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:table_componentes/export.dart';
 
 class IncludeComponents extends StatelessWidget {
   final String id;
@@ -26,7 +25,7 @@ class IncludeComponents extends StatelessWidget {
                     height: 540,
                     child: Stack(
                       children: [
-                        ComponenteInclude(id: id),
+                        // ComponenteInclude(id: id),
                         Positioned(
                           top: 2,
                           right: 5,

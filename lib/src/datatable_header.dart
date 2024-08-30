@@ -9,20 +9,20 @@ class DatatableHeader {
   final TextAlign textAlign;
   final int flex;
   final Widget Function(dynamic value)? headerBuilder;
-  final Widget Function(dynamic value, dynamic row)?
-      sourceBuilder;
+  final Widget Function(dynamic value, dynamic row)? sourceBuilder;
+  final double fontSize;
 
-  DatatableHeader({
-    required this.text,
-    required this.value,
-    this.textAlign = TextAlign.center,
-    this.sortable = false,
-    this.show = true,
-    this.comands = false,
-    this.flex = 1,
-    this.headerBuilder,
-    this.sourceBuilder,
-  });
+  DatatableHeader(
+      {required this.text,
+      required this.value,
+      this.textAlign = TextAlign.center,
+      this.sortable = false,
+      this.show = true,
+      this.comands = false,
+      this.flex = 1,
+      this.headerBuilder,
+      this.sourceBuilder,
+      this.fontSize = 12,});
 
   factory DatatableHeader.fromMap(Map<String, dynamic> map) => DatatableHeader(
         text: map['text'],
@@ -33,6 +33,7 @@ class DatatableHeader {
         flex: map['flex'],
         headerBuilder: map['headerBuilder'],
         sourceBuilder: map['sourceBuilder'],
+        fontSize: map['fontSize'],
       );
 
   Map<String, dynamic> toMap() => {
@@ -44,5 +45,6 @@ class DatatableHeader {
         "flex": this.flex,
         "headerBuilder": this.headerBuilder,
         "sourceBuilder": this.sourceBuilder,
+        "fontSize": this.fontSize,
       };
 }

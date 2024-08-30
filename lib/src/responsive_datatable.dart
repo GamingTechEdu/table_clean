@@ -5,7 +5,7 @@ import 'tools/checkbox_style.dart';
 
 class ResponsiveDatatable extends StatefulWidget {
   // final ItemSelectedCallback onItemSelect;
-  final Widget headers;
+  final Widget? headers;
   final Widget widgetLoad;
   final Widget? rows;
   final bool showSelect;
@@ -70,7 +70,7 @@ class ResponsiveDatatable extends StatefulWidget {
     this.checkboxStyle,
     this.rows,
     required this.widgetLoad,
-    required this.headers,
+    this.headers,
     // required this.onItemSelect,
   }) : super(key: key);
 
@@ -87,7 +87,7 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
           if (widget.title != null) widget.title!,
         if (widget.rowAction != null) widget.rowAction!,
         SizedBox(height: widget.heightActionHeader),
-         widget.headers,
+        if (widget.headers != null) widget.headers!,
         if (widget.isLoading) widget.widgetLoad,
         if (widget.autoHeight) widget.rows!,
         if (!widget.autoHeight) Expanded(child: widget.rows!),
