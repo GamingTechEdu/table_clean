@@ -25,10 +25,13 @@ class _InitTableArState extends State<InitTableAr> {
     return ListenableProvider(
       create: (_) => widget.controller,
       child: TesteTable(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.sizeOf(context).height * 0.96,
+        ),
         table: DataTesTableItem(
-          headers: Header(),
           title: DashboardMolecule(),
           rowAction: RowAction(),
+          headers: Header(),
           widgetLoad: CustomLinearProgressIndicator(),
           rows: CreateRows(),
           footers: FooterMolecule(),

@@ -1,4 +1,3 @@
-import 'package:adaptivex/adaptivex.dart';
 import 'package:flutter/material.dart';
 import 'data/data_testetable.dart';
 import 'tools/checkbox_style.dart';
@@ -7,8 +6,8 @@ class TesteTable extends StatefulWidget {
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
   final bool showSelect;
-  final List<Map<String, dynamic>>? selecteds;
   final DataTesTableItem table;
+  final List<Map<String, dynamic>>? selecteds;
   final Function(bool? value, Map<String, dynamic> data)? onSelect;
   final bool hideUnderline;
   final bool commonMobileView;
@@ -19,6 +18,7 @@ class TesteTable extends StatefulWidget {
   final TextStyle? rowTextStyle;
   final TextStyle? selectedTextStyle;
   final CheckboxStyle? checkboxStyle;
+  final BoxConstraints? constraints;
 
   const TesteTable({
     Key? key,
@@ -37,6 +37,7 @@ class TesteTable extends StatefulWidget {
     this.margin = const EdgeInsets.all(10),
     this.padding = const EdgeInsets.all(0),
     required this.table,
+    this.constraints, 
   }) : super(key: key);
 
   @override
@@ -51,13 +52,11 @@ class _TesteTableState extends State<TesteTable> {
         child: Container(
           margin: widget.margin,
           padding: widget.padding,
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.sizeOf(context).height * 0.96,
-          ),
+          constraints: widget.constraints,
           child: Column(
             children: [
               if (widget.table.title != null || widget.table.rowAction != null)
-                if (widget.table.title != null) widget.table.title!,
+              if (widget.table.title != null) widget.table.title!,
               if (widget.table.rowAction != null) widget.table.rowAction!,
               SizedBox(height: widget.table.heightActionHeader),
               if (widget.table.headers != null) widget.table.headers!,

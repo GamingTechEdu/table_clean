@@ -29,7 +29,7 @@ class RowAction extends StatelessWidget {
               onChanged: (value) => controller.onSelectAll(value),
             ),
             Spacers.hV,
-            SearchBarAtom(), //TODO: Faltando gerenciamento de estado
+            SearchBarAtom(),
             SizedBox(width: 50),
             // Container(
             //   width: 400,
