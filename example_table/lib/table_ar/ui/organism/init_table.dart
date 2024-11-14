@@ -22,34 +22,20 @@ class _InitTableArState extends State<InitTableAr> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Container(
-                margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(0),
-                constraints: BoxConstraints(
-                  maxHeight: MediaQuery.sizeOf(context).height * 0.96,
-                ),
-                child: ListenableProvider(
-                  create: (_) => widget.controller,
-                  child: ResponsiveDatatable(
-                    headers: Header(),
-                    title: DashboardMolecule(),
-                    rowAction: RowAction(),
-                    widgetLoad: CustomLinearProgressIndicator(),
-                    rows: CreateRows(),
-                    footers: FooterMolecule(),
-                    reponseScreenSizes: [ScreenSize.xs],
-                    autoHeight: false,
-                    isLoading: widget.controller.isLoading,
-                    heightActionHeader: 15,
-                  ),
-                ))
-          ],
+    return ListenableProvider(
+      create: (_) => widget.controller,
+      child: TesteTable(
+        table: DataTesTableItem(
+          headers: Header(),
+          title: DashboardMolecule(),
+          rowAction: RowAction(),
+          widgetLoad: CustomLinearProgressIndicator(),
+          rows: CreateRows(),
+          footers: FooterMolecule(),
+          reponseScreenSizes: [ScreenSize.xs],
+          autoHeight: false,
+          isLoading: widget.controller.isLoading,
+          heightActionHeader: 15,
         ),
       ),
     );

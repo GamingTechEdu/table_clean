@@ -4,7 +4,6 @@ import 'package:responsive_table/src/datatable_header.dart';
 import 'tools/checkbox_style.dart';
 
 class ResponsiveDatatable extends StatefulWidget {
-  // final ItemSelectedCallback onItemSelect;
   final Widget? headers;
   final Widget widgetLoad;
   final Widget? rows;

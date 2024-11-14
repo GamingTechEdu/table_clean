@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CheckboxStyle {
   final OutlinedBorder? shape;
-  final MaterialStateProperty<Color?>? overlayColor;
+  final WidgetStateProperty<Color?>? overlayColor;
   final Color? activeColor;
   final Color? checkColor;
   final BorderSide? side;
